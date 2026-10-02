@@ -1,0 +1,3483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMO PROSPECT | Prospección Comercial Inteligente</title>
+  <style>
+    /* ==========================================================================
+       LUMO PROSPECT - ESTILOS CORPORATIVOS & PALETA PREMIUM
+       Identidad: Tonos oscuros elegantes, oro refinado, blanco y acentos cálidos.
+       ========================================================================== */
+    :root {
+      --primary-dark: #11161B;
+      --secondary-dark: #1B222A;
+      --card-bg: #FFFFFF;
+      --bg-page: #F6F8FA;
+      --border-color: #E2E8F0;
+      --border-dark: #2D3748;
+      
+      /* Acentos Oro LUMO */
+      --gold-primary: #C59B27;
+      --gold-hover: #AF851A;
+      --gold-light: #FDF8EC;
+      --gold-border: #E8D39E;
+      --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+      
+      /* Tipografía y Textos */
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-inverse: #FFFFFF;
+      
+      /* Estados CRM */
+      --status-nuevo-bg: #EFF6FF;
+      --status-nuevo-text: #1D4ED8;
+      --status-nuevo-border: #BFDBFE;
+      
+      --status-contactado-bg: #F5F3FF;
+      --status-contactado-text: #6D28D9;
+      --status-contactado-border: #DDD6FE;
+      
+      --status-respondio-bg: #EEF2FF;
+      --status-respondio-text: #4338CA;
+      --status-respondio-border: #C7D2FE;
+      
+      --status-interesado-bg: #FEF3C7;
+      --status-interesado-text: #B45309;
+      --status-interesado-border: #FDE68A;
+      
+      --status-cotizacion-bg: #E0F2FE;
+      --status-cotizacion-text: #0369A1;
+      --status-cotizacion-border: #BAE6FD;
+      
+      --status-cerrado-bg: #ECFDF5;
+      --status-cerrado-text: #047857;
+      --status-cerrado-border: #A7F3D0;
+      
+      --status-no-interesado-bg: #F1F5F9;
+      --status-no-interesado-text: #64748B;
+      --status-no-interesado-border: #CBD5E1;
+
+      /* Prioridades */
+      --prio-alta-bg: #FEF2F2;
+      --prio-alta-text: #B91C1C;
+      --prio-alta-border: #FECACA;
+      
+      --prio-media-bg: #FFFBEB;
+      --prio-media-text: #B45309;
+      --prio-media-border: #FDE68A;
+      
+      --prio-baja-bg: #F8FAFC;
+      --prio-baja-text: #475569;
+      --prio-baja-border: #E2E8F0;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(17, 22, 27, 0.08);
+      --shadow-lg: 0 12px 28px rgba(17, 22, 27, 0.12);
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 60px;
+    }
+
+    /* Contenedor Principal */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ==========================================================================
+       HEADER & BARRA SUPERIOR
+       ========================================================================== */
+    .top-header {
+      background-color: var(--primary-dark);
+      color: var(--text-inverse);
+      padding: 16px 0;
+      border-bottom: 2px solid var(--gold-primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gold-gradient);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(197, 155, 39, 0.4);
+    }
+
+    .brand-text h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-text h1 span.gold {
+      color: #E5C07B;
+    }
+
+    .brand-text p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .demo-badge-pill {
+      background-color: rgba(197, 155, 39, 0.15);
+      border: 1px solid var(--gold-primary);
+      color: #F3E8C8;
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .demo-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #22C55E;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Botones Globales */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #11161B;
+      border: none;
+      box-shadow: 0 2px 6px rgba(197, 155, 39, 0.35);
+    }
+
+    .btn-gold:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 4px 10px rgba(197, 155, 39, 0.5);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary-dark);
+      color: var(--text-inverse);
+      border: 1px solid var(--border-dark);
+    }
+
+    .btn-secondary:hover {
+      background-color: #252D37;
+      border-color: #4A5568;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background-color: #EDF2F7;
+      border-color: #CBD5E1;
+    }
+
+    .btn-outline-gold {
+      background-color: transparent;
+      color: var(--gold-primary);
+      border: 1px solid var(--gold-primary);
+    }
+
+    .btn-outline-gold:hover {
+      background-color: var(--gold-light);
+    }
+
+    .btn-danger {
+      background-color: #FEE2E2;
+      color: #991B1B;
+      border: 1px solid #FECACA;
+    }
+
+    .btn-danger:hover {
+      background-color: #FCA5A5;
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+
+    .btn-icon {
+      padding: 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ==========================================================================
+       AVISO DE MODO DEMO & FUENTE DE DATOS
+       ========================================================================== */
+    .banner-notice {
+      background-color: #FFFBEB;
+      border-left: 4px solid var(--gold-primary);
+      border-bottom: 1px solid #FDE68A;
+      padding: 12px 20px;
+      font-size: 0.85rem;
+      color: #78350F;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .banner-notice strong {
+      color: #92400E;
+    }
+
+    .banner-notice .api-link {
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: 600;
+      color: #B45309;
+    }
+
+    /* ==========================================================================
+       DASHBOARD DE INDICADORES (KPIs)
+       ========================================================================== */
+    .kpi-section {
+      padding: 24px 0 16px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
+
+    .kpi-card.active-kpi {
+      border-color: var(--gold-primary);
+      background-color: #FCFBF7;
+    }
+
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #CBD5E1;
+    }
+
+    .kpi-card.kpi-nuevo::before { background: #3B82F6; }
+    .kpi-card.kpi-contactado::before { background: #8B5CF6; }
+    .kpi-card.kpi-interesado::before { background: #D97706; }
+    .kpi-card.kpi-cotizacion::before { background: #0284C7; }
+    .kpi-card.kpi-cerrado::before { background: #10B981; }
+    .kpi-card.kpi-seguimiento::before { background: #E11D48; }
+
+    .kpi-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .kpi-value {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 6px 0 2px;
+      line-height: 1.1;
+    }
+
+    .kpi-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    /* ==========================================================================
+       FORMULARIO DE BÚSQUEDA Y PROSPECCIÓN
+       ========================================================================== */
+    .prospecting-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .prospecting-header {
+      background: #FAFAFB;
+      border-bottom: 1px solid var(--border-color);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .prospecting-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .prospecting-title svg {
+      color: var(--gold-primary);
+    }
+
+    .prospecting-content {
+      padding: 20px;
+    }
+
+    .form-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .form-group select,
+    .form-group input[type="text"],
+    .form-group input[type="date"],
+    .form-group input[type="time"],
+    .form-group textarea {
+      padding: 9px 12px;
+      font-size: 0.88rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      outline: none;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.15);
+    }
+
+    /* Checkboxes de Señales Comerciales */
+    .signals-container {
+      background-color: #F8FAFC;
+      border: 1px solid #EDF2F7;
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 18px;
+    }
+
+    .signals-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .signals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .signal-checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #334155;
+      cursor: pointer;
+      background: #FFFFFF;
+      padding: 6px 10px;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .signal-checkbox-item:hover {
+      border-color: var(--gold-primary);
+      background-color: #FFFDF9;
+    }
+
+    .signal-checkbox-item input[type="checkbox"] {
+      accent-color: var(--gold-primary);
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+
+    .search-actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 6px;
+      border-top: 1px solid #F1F5F9;
+    }
+
+    .search-mode-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ==========================================================================
+       BARRA DE HERRAMIENTAS, FILTROS Y VISTAS
+       ========================================================================== */
+    .toolbar-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 14px 20px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .toolbar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+      max-width: 420px;
+    }
+
+    .search-input-wrapper input {
+      width: 100%;
+      padding: 9px 12px 9px 36px;
+      font-size: 0.88rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      outline: none;
+    }
+
+    .search-input-wrapper input:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.12);
+    }
+
+    .search-icon-inside {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      pointer-events: none;
+    }
+
+    .filter-group-inline {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-group-inline select {
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      outline: none;
+    }
+
+    .view-toggle {
+      display: inline-flex;
+      background: #F1F5F9;
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      border: 1px solid var(--border-color);
+    }
+
+    .view-btn {
+      padding: 6px 12px;
+      border: none;
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition);
+    }
+
+    .view-btn.active {
+      background: #FFFFFF;
+      color: var(--primary-dark);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .count-indicator {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       ETIQUETAS & PILLS DE ESTADO Y PRIORIDAD
+       ========================================================================== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .badge-demo {
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+      font-size: 0.68rem;
+      padding: 1px 6px;
+    }
+
+    /* Estados CRM Badges */
+    .badge-status-NUEVO { background: var(--status-nuevo-bg); color: var(--status-nuevo-text); border: 1px solid var(--status-nuevo-border); }
+    .badge-status-CONTACTADO { background: var(--status-contactado-bg); color: var(--status-contactado-text); border: 1px solid var(--status-contactado-border); }
+    .badge-status-RESPONDIÓ { background: var(--status-respondio-bg); color: var(--status-respondio-text); border: 1px solid var(--status-respondio-border); }
+    .badge-status-INTERESADO { background: var(--status-interesado-bg); color: var(--status-interesado-text); border: 1px solid var(--status-interesado-border); }
+    .badge-status-COTIZACIÓN { background: var(--status-cotizacion-bg); color: var(--status-cotizacion-text); border: 1px solid var(--status-cotizacion-border); }
+    .badge-status-CERRADO { background: var(--status-cerrado-bg); color: var(--status-cerrado-text); border: 1px solid var(--status-cerrado-border); }
+    .badge-status-NO-INTERESADO { background: var(--status-no-interesado-bg); color: var(--status-no-interesado-text); border: 1px solid var(--status-no-interesado-border); }
+
+    /* Prioridades Badges */
+    .badge-prio-ALTA { background: var(--prio-alta-bg); color: var(--prio-alta-text); border: 1px solid var(--prio-alta-border); }
+    .badge-prio-MEDIA { background: var(--prio-media-bg); color: var(--prio-media-text); border: 1px solid var(--prio-media-border); }
+    .badge-prio-BAJA { background: var(--prio-baja-bg); color: var(--prio-baja-text); border: 1px solid var(--prio-baja-border); }
+
+    /* ==========================================================================
+       VISTA TABLA DE PROSPECTOS
+       ========================================================================== */
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow-x: auto;
+    }
+
+    .prospects-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    .prospects-table th {
+      background-color: #FAFAFB;
+      color: var(--text-muted);
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .prospects-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+      color: var(--text-main);
+    }
+
+    .prospects-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .prospects-table tr:hover {
+      background-color: #F8FAFC;
+    }
+
+    .company-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .company-cell .company-name {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .company-cell .company-meta {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-badge {
+      display: inline-block;
+      background: var(--gold-light);
+      color: #92400E;
+      border: 1px solid var(--gold-border);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .signal-cell {
+      max-width: 220px;
+    }
+
+    .signal-text {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1E293B;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .signal-date {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .contact-cell {
+      font-size: 0.8rem;
+    }
+
+    .contact-name {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .contact-role {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .follow-up-cell {
+      font-size: 0.78rem;
+    }
+
+    .follow-up-pending {
+      color: #DC2626;
+      font-weight: 700;
+    }
+
+    .follow-up-future {
+      color: #2563EB;
+      font-weight: 600;
+    }
+
+    .follow-up-none {
+      color: var(--text-light);
+    }
+
+    /* ==========================================================================
+       VISTA TARJETAS (CARDS)
+       ========================================================================== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .prospect-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .prospect-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .card-company-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .card-body-section {
+      background: #F8FAFC;
+      border: 1px solid #EDF2F7;
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .card-section-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .card-signal-desc {
+      font-size: 0.8rem;
+      color: #1E293B;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .card-service-rec {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #92400E;
+    }
+
+    .card-contact-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+    }
+
+    .contact-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #E2E8F0;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #F1F5F9;
+      padding-top: 12px;
+      margin-top: auto;
+    }
+
+    /* ==========================================================================
+       MODAL DE DETALLE (FICHA DEL PROSPECTO)
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(17, 22, 27, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-window {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 900px;
+      max-height: 92vh;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.96);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal-window {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      background: var(--primary-dark);
+      color: #FFFFFF;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--gold-primary);
+    }
+
+    .modal-header-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .modal-header h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+      transition: var(--transition);
+    }
+
+    .modal-close-btn:hover {
+      color: #FFFFFF;
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background-color: #FAFAFB;
+    }
+
+    /* Flujo / Pipeline CRM */
+    .pipeline-wrapper {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pipeline-label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .pipeline-stepper {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .pipeline-step {
+      flex: 1;
+      text-align: center;
+      padding: 8px 6px;
+      background: #F1F5F9;
+      color: #64748B;
+      font-size: 0.74rem;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .pipeline-step:hover {
+      background: #E2E8F0;
+    }
+
+    .pipeline-step.active {
+      background: var(--primary-dark);
+      color: #FFFFFF;
+      border-color: var(--gold-primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .pipeline-step.rejected {
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    /* Paneles de Dos Columnas en Ficha */
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 18px;
+    }
+
+    .detail-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .detail-card-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #EDF2F7;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .detail-card-title svg {
+      color: var(--gold-primary);
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.82rem;
+      gap: 10px;
+    }
+
+    .info-item-label {
+      color: var(--text-muted);
+      font-weight: 600;
+      min-width: 110px;
+      flex-shrink: 0;
+    }
+
+    .info-item-val {
+      color: var(--text-main);
+      font-weight: 500;
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .info-item-val a {
+      color: var(--gold-hover);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    /* Caja de Recomendación LUMO */
+    .recommendation-box {
+      background: #FFFDF7;
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-top: 12px;
+    }
+
+    .rec-heading {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold-hover);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .rec-service {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #78350F;
+      margin-bottom: 8px;
+    }
+
+    .rec-why-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .rec-why-text {
+      font-size: 0.84rem;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    /* Caja de Mensaje Comercial Personalizado */
+    .sales-message-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sales-message-textarea {
+      width: 100%;
+      min-height: 110px;
+      padding: 12px;
+      font-size: 0.88rem;
+      border: 1px solid #CBD5E1;
+      border-radius: var(--radius-sm);
+      background-color: #F8FAFC;
+      line-height: 1.45;
+      color: #0F172A;
+      resize: vertical;
+      margin: 10px 0;
+    }
+
+    .sales-message-textarea:focus {
+      background-color: #FFFFFF;
+      border-color: var(--gold-primary);
+      outline: none;
+    }
+
+    .sales-message-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Notas & Seguimiento */
+    .notes-timeline {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .note-bubble {
+      background: #F1F5F9;
+      border-left: 3px solid var(--gold-primary);
+      padding: 8px 12px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.8rem;
+    }
+
+    .note-date {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+
+    .note-text {
+      color: #1E293B;
+    }
+
+    .modal-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-color);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ==========================================================================
+       NOTIFICACIONES FLOTANTES (TOAST)
+       ========================================================================== */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .toast-msg {
+      background: var(--primary-dark);
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      font-size: 0.86rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 4px solid var(--gold-primary);
+      animation: slideInToast 0.3s ease forwards;
+      pointer-events: auto;
+    }
+
+    @keyframes slideInToast {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .toast-msg.toast-fadeout {
+      animation: fadeOutToast 0.3s ease forwards;
+    }
+
+    @keyframes fadeOutToast {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(100%); opacity: 0; }
+    }
+
+    /* ==========================================================================
+       ESTADO VACÍO
+       ========================================================================== */
+    .empty-state {
+      background: #FFFFFF;
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 48px 20px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .empty-state svg {
+      color: #CBD5E1;
+      margin-bottom: 12px;
+    }
+
+    .empty-state h3 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (Móvil, Tablet, Escritorio)
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .table-view-mode {
+        display: none !important;
+      }
+      .cards-view-mode {
+        display: grid !important;
+      }
+      .view-toggle {
+        display: none;
+      }
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .search-input-wrapper {
+        max-width: 100%;
+      }
+      .modal-window {
+        max-height: 98vh;
+        border-radius: var(--radius-md);
+      }
+      .modal-body {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER PRINCIPAL
+       ========================================================================== -->
+  <header class="top-header">
+    <div class="container header-content">
+      <div class="brand-block">
+        <div class="brand-logo-icon">L</div>
+        <div class="brand-text">
+          <h1>LUMO <span class="gold">PROSPECT</span></h1>
+          <p>Encuentra oportunidades comerciales para LUMO</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="demo-badge-pill" title="Datos de muestra claramente identificados para Lima">
+          <span class="demo-dot"></span>
+          <span>Modo Demo Activo (Lima)</span>
+        </div>
+        <button class="btn btn-gold btn-sm" onclick="openCreateModal()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Nuevo Prospecto
+        </button>
+        <button class="btn btn-secondary btn-sm" onclick="openApiConfigModal()" title="Configurar conexión con fuentes externas o APIs">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Conexión API
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       AVISO DE MODO DEMO
+       ========================================================================== -->
+  <aside class="banner-notice" aria-label="Aviso del sistema">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 8px;">
+      <div>
+        <strong>Modo demo:</strong> conecta una fuente de datos para realizar búsquedas reales. Los prospectos actuales son casos de muestra identificados como [DEMO] basados en empresas y situaciones típicas en Lima Metropolitana.
+      </div>
+      <div>
+        <span class="api-link" onclick="openApiConfigModal()">Ver arquitectura de integración &rarr;</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="container">
+    <!-- ==========================================================================
+         PANEL DE INDICADORES (KPIs)
+         ========================================================================== -->
+    <section class="kpi-section">
+      <div class="kpi-grid">
+        <div class="kpi-card kpi-nuevo" onclick="filterByStatus('NUEVO')" title="Filtrar por Nuevos">
+          <div class="kpi-title">Nuevos</div>
+          <div class="kpi-value" id="kpi-nuevo-count">0</div>
+          <div class="kpi-subtitle">Por prospectar</div>
+        </div>
+
+        <div class="kpi-card kpi-contactado" onclick="filterByStatus('CONTACTADO')" title="Filtrar por Contactados">
+          <div class="kpi-title">Contactados</div>
+          <div class="kpi-value" id="kpi-contactado-count">0</div>
+          <div class="kpi-subtitle">Mensaje enviado</div>
+        </div>
+
+        <div class="kpi-card kpi-interesado" onclick="filterByStatus('INTERESADO')" title="Filtrar por Interesados">
+          <div class="kpi-title">Interesados</div>
+          <div class="kpi-value" id="kpi-interesado-count">0</div>
+          <div class="kpi-subtitle">En conversación</div>
+        </div>
+
+        <div class="kpi-card kpi-cotizacion" onclick="filterByStatus('COTIZACIÓN')" title="Filtrar por Cotizaciones">
+          <div class="kpi-title">Cotizaciones</div>
+          <div class="kpi-value" id="kpi-cotizacion-count">0</div>
+          <div class="kpi-subtitle">Propuesta enviada</div>
+        </div>
+
+        <div class="kpi-card kpi-cerrado" onclick="filterByStatus('CERRADO')" title="Filtrar por Ganados">
+          <div class="kpi-title">Cerrados</div>
+          <div class="kpi-value" id="kpi-cerrado-count">0</div>
+          <div class="kpi-subtitle">Clientes ganados</div>
+        </div>
+
+        <div class="kpi-card kpi-seguimiento" onclick="filterByPendingFollowups()" title="Filtrar seguimientos pendientes o para hoy">
+          <div class="kpi-title">Seguimientos</div>
+          <div class="kpi-value" id="kpi-seguimiento-count">0</div>
+          <div class="kpi-subtitle">Pendientes / Hoy</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FORMULARIO DE BÚSQUEDA Y DETECCIÓN DE OPORTUNIDADES
+         ========================================================================== -->
+    <section class="prospecting-panel">
+      <div class="prospecting-header" onclick="toggleSearchForm()">
+        <div class="prospecting-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Buscador y Detector de Oportunidades Comerciales</span>
+        </div>
+        <div style="font-size: 0.8rem; color: var(--gold-primary); font-weight: 600;" id="search-collapse-indicator">
+          Ocultar panel ▲
+        </div>
+      </div>
+
+      <div class="prospecting-content" id="search-form-body">
+        <form id="prospectingSearchForm" onsubmit="handleProspectSearch(event)">
+          <div class="form-grid-4">
+            <div class="form-group">
+              <label for="searchCompanyType">Tipo de empresa</label>
+              <select id="searchCompanyType">
+                <option value="cualquiera">Cualquier empresa</option>
+                <option value="pequeña">Pequeña (1 a 50 colaboradores)</option>
+                <option value="mediana">Mediana (51 a 200 colaboradores)</option>
+                <option value="grande">Grande (200+ colaboradores)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="searchSector">Rubro / Sector</label>
+              <select id="searchSector">
+                <option value="todos">Todos los rubros</option>
+                <option value="Banca y Finanzas">Banca y Finanzas / Seguros</option>
+                <option value="Minería e Industria">Minería / Construcción / Industria</option>
+                <option value="Tecnología">Tecnología / Software / Telecom</option>
+                <option value="Farmacéutica y Salud">Farmacéutica / Salud</option>
+                <option value="Retail y Consumo">Retail / Consumo Masivo / Logística</option>
+                <option value="Educación">Educación</option>
+                <option value="Inmobiliaria">Inmobiliaria</option>
+                <option value="Servicios Corporativos">Servicios Corporativos / Otros</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="searchLocation">Ubicación</label>
+              <input type="text" id="searchLocation" value="Lima Metropolitana" placeholder="Ej. Lima Metropolitana, San Isidro, Surco">
+            </div>
+
+            <div class="form-group">
+              <label for="searchTargetArea">Área objetivo</label>
+              <select id="searchTargetArea">
+                <option value="cualquiera">Cualquiera</option>
+                <option value="Recursos Humanos">Recursos Humanos / Talento</option>
+                <option value="Marketing">Marketing / Publicidad</option>
+                <option value="Comunicaciones">Comunicaciones / RRPP</option>
+                <option value="Administración">Administración / Logística / Compras</option>
+                <option value="Bienestar y Cultura">Bienestar / Cultura / Clima</option>
+                <option value="Eventos">Eventos Corporativos</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="searchServiceInterest">Servicio de interés</label>
+              <select id="searchServiceInterest">
+                <option value="cualquiera">Cualquiera de LUMO</option>
+                <option value="Catering corporativo">Catering corporativo general</option>
+                <option value="Coffee break">Coffee breaks</option>
+                <option value="Desayunos">Desayunos corporativos</option>
+                <option value="Box lunch">Box lunch / Refrigerios</option>
+                <option value="Mobiliario">Mobiliario para eventos</option>
+                <option value="Carritos de snacks">Carritos de snacks</option>
+                <option value="Merchandising corporativo">Merchandising corporativo</option>
+                <option value="Regalos corporativos">Regalos corporativos</option>
+                <option value="Activaciones BTL">Activaciones BTL</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="searchQuantity">Cantidad de prospectos</label>
+              <select id="searchQuantity">
+                <option value="10">10 prospectos</option>
+                <option value="25">25 prospectos</option>
+                <option value="50">50 prospectos</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- SEÑALES COMERCIALES PRIORIZADAS -->
+          <div class="signals-container">
+            <div class="signals-label">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              <span>Señales comerciales que indican necesidad de servicios de LUMO (marca las de interés):</span>
+            </div>
+            <div class="signals-grid">
+              <label class="signal-checkbox-item">
+                <input type="checkbox" name="signalType" value="eventos_frecuentes" checked>
+                <span>Eventos frecuentes o corporativos</span>
+              </label>
+              <label class="signal-checkbox-item">
+                <input type="checkbox" name="signalType" value="contratacion_personal" checked>
+                <span>Contratación masiva / Onboarding</span>
+              </label>
+              <label class="signal-checkbox-item">
+                <input type="checkbox" name="signalType" value="campanas_activaciones" checked>
+                <span>Campañas o activaciones de marca</span>
+              </label>
+              <label class="signal-checkbox-item">
+                <input type="checkbox" name="signalType" value="varias_sedes" checked>
+                <span>Múltiples sedes / Oficinas en Lima</span>
+              </label>
+              <label class="signal-checkbox-item">
+                <input type="checkbox" name="signalType" value="celebraciones_aniversario">
+                <span>Aniversarios o celebraciones</span>
+              </label>
+              <label class="signal-checkbox-item">
+                <input type="checkbox" name="signalType" value="crecimiento_oficinas">
+                <span>Apertura de oficinas / Crecimiento</span>
+              </label>
+              <label class="signal-checkbox-item">
+                <input type="checkbox" name="signalType" value="bienestar_integracion">
+                <span>Bienestar / Integración de colaboradores</span>
+              </label>
+              <label class="signal-checkbox-item">
+                <input type="checkbox" name="signalType" value="otras_oportunidades">
+                <span>Otras señales comerciales</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="search-actions-bar">
+            <div class="search-mode-text">
+              <span id="search-status-label">Modo demo activo: filtrando prospectos calificados para LUMO en Lima Metropolitana.</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="resetSearchForm()">Limpiar</button>
+              <button type="submit" class="btn btn-gold btn-sm">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                Buscar Oportunidades
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BARRA DE HERRAMIENTAS, FILTROS RÁPIDOS Y VISTAS
+         ========================================================================== -->
+    <section class="toolbar-section">
+      <div class="toolbar-row">
+        <div class="search-input-wrapper">
+          <svg class="search-icon-inside" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="quickSearchInput" placeholder="Buscar por empresa, contacto, señal o rubro..." oninput="handleQuickSearch()">
+        </div>
+
+        <div class="filter-group-inline">
+          <select id="filterPrioritySelect" onchange="applyFilters()">
+            <option value="todas">Prioridad: Todas</option>
+            <option value="ALTA">Alta Prioridad</option>
+            <option value="MEDIA">Prioridad Media</option>
+            <option value="BAJA">Baja Prioridad</option>
+          </select>
+
+          <select id="filterStatusSelect" onchange="applyFilters()">
+            <option value="todos">Estado CRM: Todos</option>
+            <option value="NUEVO">NUEVO</option>
+            <option value="CONTACTADO">CONTACTADO</option>
+            <option value="RESPONDIÓ">RESPONDIÓ</option>
+            <option value="INTERESADO">INTERESADO</option>
+            <option value="COTIZACIÓN">COTIZACIÓN</option>
+            <option value="CERRADO">CERRADO</option>
+            <option value="NO INTERESADO">NO INTERESADO</option>
+          </select>
+
+          <button class="btn btn-outline btn-sm" onclick="clearAllFilters()" title="Restablecer todos los filtros">
+            Limpiar filtros
+          </button>
+
+          <div class="view-toggle">
+            <button class="view-btn active" id="viewBtnTable" onclick="switchView('table')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              Tabla
+            </button>
+            <button class="view-btn" id="viewBtnCards" onclick="switchView('cards')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              Tarjetas
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="count-indicator">
+        <span id="resultsCount">Cargando prospectos...</span>
+        <button class="btn btn-outline btn-sm" style="font-size:0.75rem; padding: 3px 8px;" onclick="resetDemoDataPrompt()">
+          ↺ Restablecer datos DEMO
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VISTA DE PROSPECTOS: TABLA
+         ========================================================================== -->
+    <div class="table-container table-view-mode" id="tableContainer">
+      <table class="prospects-table">
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Rubro</th>
+            <th>Prioridad</th>
+            <th>Señal Detectada</th>
+            <th>Servicio Recomendado</th>
+            <th>Contacto Clave</th>
+            <th>Estado CRM</th>
+            <th>Próx. Seguimiento</th>
+            <th style="text-align: right;">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="prospectsTableBody">
+          <!-- Generado dinámicamente con JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ==========================================================================
+         VISTA DE PROSPECTOS: TARJETAS (CARDS)
+         ========================================================================== -->
+    <div class="cards-grid cards-view-mode" id="cardsContainer" style="display: none;">
+      <!-- Generado dinámicamente con JavaScript -->
+    </div>
+
+    <!-- ESTADO VACÍO CUANDO NO HAY RESULTADOS -->
+    <div id="emptyResultsState" class="empty-state" style="display: none;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <h3>No se encontraron prospectos con esos criterios</h3>
+      <p>Prueba ajustando los filtros de búsqueda o agrega un nuevo prospecto manualmente.</p>
+      <div style="margin-top: 14px;">
+        <button class="btn btn-outline btn-sm" onclick="clearAllFilters()">Restablecer Filtros</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       MODAL 1: FICHA COMPLETA DEL PROSPECTO (DETALLE & ACCIONES)
+       ========================================================================== -->
+  <div class="modal-overlay" id="detailModalOverlay" onclick="handleModalOverlayClick(event, 'detailModalOverlay')">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <h2 id="modalCompanyName">Nombre Empresa</h2>
+          <span class="badge badge-demo" id="modalDemoBadge">DEMO</span>
+          <span class="badge" id="modalPriorityBadge">ALTA PRIORIDAD</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- FLUJO DE ESTADO DEL CRM -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-label">Flujo Comercial LUMO (haz clic en un estado para actualizarlo):</div>
+          <div class="pipeline-stepper" id="pipelineStepper">
+            <div class="pipeline-step" onclick="changeCurrentProspectStatus('NUEVO')">Nuevo</div>
+            <div class="pipeline-step" onclick="changeCurrentProspectStatus('CONTACTADO')">Contactado</div>
+            <div class="pipeline-step" onclick="changeCurrentProspectStatus('RESPONDIÓ')">Respondió</div>
+            <div class="pipeline-step" onclick="changeCurrentProspectStatus('INTERESADO')">Interesado</div>
+            <div class="pipeline-step" onclick="changeCurrentProspectStatus('COTIZACIÓN')">Cotización</div>
+            <div class="pipeline-step" onclick="changeCurrentProspectStatus('CERRADO')">Cerrado</div>
+            <div class="pipeline-step rejected" onclick="changeCurrentProspectStatus('NO INTERESADO')">No interesado</div>
+          </div>
+        </div>
+
+        <!-- DETALLE EN DOS COLUMNAS -->
+        <div class="detail-grid">
+          <!-- COLUMNA IZQUIERDA: EMPRESA Y CONTACTO -->
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <!-- DATOS DE EMPRESA -->
+            <div class="detail-card">
+              <div class="detail-card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Información de la Empresa</span>
+              </div>
+              <div class="info-list">
+                <div class="info-item">
+                  <span class="info-item-label">Rubro:</span>
+                  <span class="info-item-val" id="modalCompanySector">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Ubicación:</span>
+                  <span class="info-item-val" id="modalCompanyLocation">Lima Metropolitana</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Tamaño / Equipo:</span>
+                  <span class="info-item-val" id="modalCompanySize">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Sedes u Oficinas:</span>
+                  <span class="info-item-val" id="modalCompanyBranches">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Sitio Web:</span>
+                  <span class="info-item-val" id="modalCompanyWeb">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">LinkedIn Empresa:</span>
+                  <span class="info-item-val" id="modalCompanyLinkedin">-</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- DATOS DE CONTACTO CLAVE -->
+            <div class="detail-card">
+              <div class="detail-card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Contacto Responsable Identificado</span>
+              </div>
+              <div class="info-list">
+                <div class="info-item">
+                  <span class="info-item-label">Nombre:</span>
+                  <span class="info-item-val" id="modalContactName" style="font-weight: 700;">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Cargo:</span>
+                  <span class="info-item-val" id="modalContactRole">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Área:</span>
+                  <span class="info-item-val" id="modalContactArea">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">LinkedIn Personal:</span>
+                  <span class="info-item-val" id="modalContactLinkedin">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Correo Corporativo:</span>
+                  <span class="info-item-val" id="modalContactEmail">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Teléfono:</span>
+                  <span class="info-item-val" id="modalContactPhone">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Fuente del Contacto:</span>
+                  <span class="info-item-val" id="modalContactSource" style="color: var(--text-light); font-size: 0.76rem;">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUMNA DERECHA: OPORTUNIDAD, RECOMENDACIÓN LUMO Y MENSAJE -->
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <!-- OPORTUNIDAD DETECTADA -->
+            <div class="detail-card">
+              <div class="detail-card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                <span>Oportunidad & Señal Comercial</span>
+              </div>
+              <div class="info-list">
+                <div class="info-item">
+                  <span class="info-item-label">Señal Detectada:</span>
+                  <span class="info-item-val" id="modalOpportunitySignal" style="font-weight: 600; color: #1E293B;">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Fecha de la Señal:</span>
+                  <span class="info-item-val" id="modalOpportunityDate">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Fuente Pública:</span>
+                  <span class="info-item-val" id="modalOpportunitySource">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item-label">Criterio Prioridad:</span>
+                  <span class="info-item-val" id="modalPriorityReason" style="font-style: italic;">-</span>
+                </div>
+              </div>
+
+              <!-- ASOCIACIÓN AUTOMÁTICA LUMO -->
+              <div class="recommendation-box">
+                <div class="rec-heading">SERVICIO RECOMENDADO POR LUMO</div>
+                <div class="rec-service" id="modalRecommendedService">-</div>
+                <div class="rec-why-label">¿POR QUÉ ESTA RECOMENDACIÓN?</div>
+                <div class="rec-why-text" id="modalRecommendationReason">-</div>
+              </div>
+            </div>
+
+            <!-- MENSAJE COMERCIAL SUGERIDO -->
+            <div class="sales-message-box">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.84rem; font-weight: 700; color: var(--primary-dark);">Mensaje Comercial Sugerido</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted);">Personalizado con la señal detectada</span>
+              </div>
+              
+              <textarea class="sales-message-textarea" id="modalSalesMessageText" spellcheck="false"></textarea>
+
+              <div class="sales-message-actions">
+                <button class="btn btn-gold btn-sm" onclick="copySalesMessage()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Copiar Mensaje
+                </button>
+                <div style="display: flex; gap: 6px;">
+                  <button class="btn btn-outline btn-sm" onclick="openWhatsAppContact()" id="btnActionWhatsApp" title="Abrir WhatsApp">
+                    WhatsApp
+                  </button>
+                  <button class="btn btn-outline btn-sm" onclick="openEmailContact()" id="btnActionEmail" title="Abrir Correo">
+                    Email
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEGUIMIENTO Y NOTAS HISTÓRICAS -->
+        <div class="detail-card">
+          <div class="detail-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Gestión de Seguimiento & Bitácora Comercial</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; display: block;">Programar Próximo Seguimiento:</label>
+              <div style="display: flex; gap: 8px;">
+                <input type="date" id="modalNextFollowUpInput" style="padding: 7px 10px; font-size: 0.84rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); flex: 1;">
+                <button class="btn btn-outline-gold btn-sm" onclick="saveFollowUpDate()">Programar</button>
+              </div>
+              <div style="font-size: 0.74rem; color: var(--text-light); margin-top: 4px;" id="modalLastContactLabel">
+                Último contacto: Sin registro
+              </div>
+            </div>
+
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; display: block;">Agregar Nota de Seguimiento:</label>
+              <div style="display: flex; gap: 8px;">
+                <input type="text" id="modalNewNoteInput" placeholder="Ej. Contacté por LinkedIn, pidió llamada el viernes..." style="padding: 7px 10px; font-size: 0.84rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); flex: 1;" onkeydown="if(event.key==='Enter') addProspectNote()">
+                <button class="btn btn-secondary btn-sm" onclick="addProspectNote()">Agregar</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Historial de Notas:</div>
+            <div class="notes-timeline" id="modalNotesTimeline">
+              <!-- Notas inyectadas dinámicamente -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-danger btn-sm" onclick="deleteCurrentProspectPrompt()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+          Eliminar Prospecto
+        </button>
+
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-outline btn-sm" onclick="openEditModalForCurrent()">
+            Editar Prospecto
+          </button>
+          <button class="btn btn-secondary btn-sm" onclick="closeDetailModal()">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: CREAR / EDITAR PROSPECTO MANUALMENTE
+       ========================================================================== -->
+  <div class="modal-overlay" id="formModalOverlay" onclick="handleModalOverlayClick(event, 'formModalOverlay')">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h2 id="formModalTitle">Registrar Nuevo Prospecto</h2>
+        <button class="modal-close-btn" onclick="closeFormModal()">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="prospectForm" onsubmit="handleSaveProspectForm(event)">
+          <input type="hidden" id="formProspectId">
+
+          <div class="form-grid-4">
+            <div class="form-group" style="grid-column: span 2;">
+              <label for="formCompanyName">Nombre de la Empresa *</label>
+              <input type="text" id="formCompanyName" required placeholder="Ej. Corporación Lima S.A.C.">
+            </div>
+
+            <div class="form-group">
+              <label for="formCompanySector">Rubro</label>
+              <select id="formCompanySector">
+                <option value="Banca y Finanzas">Banca y Finanzas</option>
+                <option value="Minería e Industria">Minería e Industria</option>
+                <option value="Tecnología">Tecnología / Telecom</option>
+                <option value="Farmacéutica y Salud">Farmacéutica y Salud</option>
+                <option value="Retail y Consumo">Retail y Consumo Masivo</option>
+                <option value="Educación">Educación</option>
+                <option value="Inmobiliaria">Inmobiliaria y Construcción</option>
+                <option value="Servicios Corporativos">Servicios Corporativos</option>
+                <option value="Otro">Otro Rubro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="formCompanyLocation">Ubicación</label>
+              <input type="text" id="formCompanyLocation" value="Lima Metropolitana" placeholder="Ej. San Isidro, Lima">
+            </div>
+
+            <div class="form-group">
+              <label for="formCompanySize">Tamaño / Colaboradores</label>
+              <input type="text" id="formCompanySize" placeholder="Ej. 120 colaboradores">
+            </div>
+
+            <div class="form-group">
+              <label for="formCompanyBranches">Sedes u Oficinas</label>
+              <input type="text" id="formCompanyBranches" placeholder="Ej. 3 oficinas en Lima">
+            </div>
+
+            <div class="form-group">
+              <label for="formCompanyWeb">Sitio Web</label>
+              <input type="text" id="formCompanyWeb" placeholder="https://ejemplo.com o No disponible">
+            </div>
+
+            <div class="form-group">
+              <label for="formCompanyLinkedin">LinkedIn de la Empresa</label>
+              <input type="text" id="formCompanyLinkedin" placeholder="https://linkedin.com/company/... o No disponible">
+            </div>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">
+              Oportunidad y Señales Detectadas
+            </div>
+
+            <div class="form-grid-4">
+              <div class="form-group" style="grid-column: span 2;">
+                <label for="formSignalDesc">Señal comercial detectada *</label>
+                <input type="text" id="formSignalDesc" required placeholder="Ej. Publicaron anuncio de contratación masiva para nuevo proyecto" onchange="autoSuggestLumoService()">
+              </div>
+
+              <div class="form-group">
+                <label for="formSignalDate">Fecha de la señal</label>
+                <input type="date" id="formSignalDate">
+              </div>
+
+              <div class="form-group">
+                <label for="formSignalSource">Fuente de la información</label>
+                <input type="text" id="formSignalSource" placeholder="Ej. LinkedIn Empleos, Diario Gestión, Comunicado">
+              </div>
+
+              <div class="form-group">
+                <label for="formPriority">Nivel de Prioridad</label>
+                <select id="formPriority" onchange="autoSuggestPriorityReason()">
+                  <option value="ALTA">ALTA PRIORIDAD</option>
+                  <option value="MEDIA" selected>PRIORIDAD MEDIA</option>
+                  <option value="BAJA">BAJA PRIORIDAD</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="grid-column: span 3;">
+                <label for="formPriorityReason">Criterio visible de prioridad</label>
+                <input type="text" id="formPriorityReason" placeholder="Ej. Cuenta con 3 señales: contratación masiva, fecha próxima y múltiples oficinas">
+              </div>
+            </div>
+
+            <div class="form-grid-4" style="margin-top: 10px;">
+              <div class="form-group" style="grid-column: span 2;">
+                <label for="formRecommendedService">Servicio recomendado de LUMO *</label>
+                <input type="text" id="formRecommendedService" required placeholder="Ej. Coffee break + Kit de bienvenida / Merchandising">
+              </div>
+
+              <div class="form-group" style="grid-column: span 2;">
+                <label for="formRecommendationReason">¿Por qué este servicio?</label>
+                <input type="text" id="formRecommendationReason" placeholder="Ej. Requieren inducción para nuevos colaboradores que ingresan">
+              </div>
+            </div>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">
+              Datos del Contacto Identificado
+            </div>
+
+            <div class="form-grid-4">
+              <div class="form-group">
+                <label for="formContactName">Nombre del Contacto</label>
+                <input type="text" id="formContactName" placeholder="Ej. Mariana Ruiz o No disponible">
+              </div>
+
+              <div class="form-group">
+                <label for="formContactRole">Cargo</label>
+                <input type="text" id="formContactRole" placeholder="Ej. Jefa de Gestión Humana">
+              </div>
+
+              <div class="form-group">
+                <label for="formContactArea">Área</label>
+                <select id="formContactArea">
+                  <option value="Recursos Humanos">Recursos Humanos / Talento</option>
+                  <option value="Marketing">Marketing / Publicidad</option>
+                  <option value="Comunicaciones">Comunicaciones / RRPP</option>
+                  <option value="Administración">Administración</option>
+                  <option value="Logística">Logística / Compras</option>
+                  <option value="Bienestar / Cultura">Bienestar / Cultura</option>
+                  <option value="Eventos">Eventos Corporativos</option>
+                  <option value="No disponible">No disponible</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="formContactLinkedin">LinkedIn del Contacto</label>
+                <input type="text" id="formContactLinkedin" placeholder="https://linkedin.com/in/... o No disponible">
+              </div>
+
+              <div class="form-group">
+                <label for="formContactEmail">Correo Corporativo</label>
+                <input type="text" id="formContactEmail" placeholder="correo@empresa.pe o No disponible">
+              </div>
+
+              <div class="form-group">
+                <label for="formContactPhone">Teléfono Empresarial</label>
+                <input type="text" id="formContactPhone" placeholder="Teléfono o No disponible">
+              </div>
+
+              <div class="form-group" style="grid-column: span 2;">
+                <label for="formContactSource">Fuente del Contacto</label>
+                <input type="text" id="formContactSource" placeholder="Ej. Perfil público de LinkedIn, Web institucional">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid-4">
+            <div class="form-group">
+              <label for="formStatus">Estado Inicial CRM</label>
+              <select id="formStatus">
+                <option value="NUEVO" selected>NUEVO</option>
+                <option value="CONTACTADO">CONTACTADO</option>
+                <option value="RESPONDIÓ">RESPONDIÓ</option>
+                <option value="INTERESADO">INTERESADO</option>
+                <option value="COTIZACIÓN">COTIZACIÓN</option>
+                <option value="CERRADO">CERRADO</option>
+                <option value="NO INTERESADO">NO INTERESADO</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="formNextFollowUp">Próximo Seguimiento</label>
+              <input type="date" id="formNextFollowUp">
+            </div>
+
+            <div class="form-group" style="grid-column: span 2;">
+              <label style="display:flex; justify-content: space-between;">
+                <span>Mensaje Comercial Sugerido</span>
+                <span style="font-size: 0.72rem; color: var(--gold-hover); cursor: pointer; font-weight: 700;" onclick="regenerateCustomFormMessage()">
+                  ⚡ Autogenerar Mensaje
+                </span>
+              </label>
+              <input type="text" id="formCustomMessage" placeholder="Se autogenerará según la empresa y el servicio sugerido">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 14px;">
+            <button type="button" class="btn btn-outline btn-sm" onclick="closeFormModal()">Cancelar</button>
+            <button type="submit" class="btn btn-gold btn-sm">Guardar Prospecto</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 3: CONFIGURACIÓN DE CONEXIÓN API / FUENTES EXTERNAS
+       ========================================================================== -->
+  <div class="modal-overlay" id="apiModalOverlay" onclick="handleModalOverlayClick(event, 'apiModalOverlay')">
+    <div class="modal-window" style="max-width: 720px;">
+      <div class="modal-header">
+        <h2>Conexión a Fuentes Externas & APIs</h2>
+        <button class="modal-close-btn" onclick="closeApiConfigModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.88rem; color: #334155;">
+          <strong>LUMO PROSPECT</strong> está diseñada con una arquitectura modular. Para evitar datos inventados o scraping no autorizado, en este momento opera en <strong>Modo Demo Transparente</strong>.
+        </p>
+
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 14px; font-size: 0.82rem;">
+          <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 6px;">
+            ¿Cómo conectar fuentes reales de prospección en Lima?
+          </div>
+          <ul style="padding-left: 20px; color: #475569; display: flex; flex-direction: column; gap: 6px;">
+            <li><strong>LinkedIn Sales Navigator / Apollo.io API:</strong> Para enriquecer empresas y verificar cargos en RR.HH., Marketing y Eventos.</li>
+            <li><strong>Webhooks de Portales de Empleo (Bumeran / Computrabajo):</strong> Detectar empresas con contrataciones masivas en Lima.</li>
+            <li><strong>Google Alerts / Custom Search API:</strong> Monitorear noticias de aperturas, convenciones y aniversarios en Lima.</li>
+          </ul>
+        </div>
+
+        <div class="form-group" style="margin-top: 10px;">
+          <label for="apiEndpointInput">URL del Webhook o API Backend (Opcional):</label>
+          <input type="text" id="apiEndpointInput" placeholder="https://api.tuempresa.pe/prospects/search" value="">
+          <span style="font-size: 0.72rem; color: var(--text-light);">
+            El código fuente en <code>index.html</code> incluye la función preparada <code>fetchExternalProspects(criteria)</code> lista para usar.
+          </span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+          <button class="btn btn-outline btn-sm" onclick="exportDataAsJSON()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Exportar JSON
+          </button>
+          <button class="btn btn-gold btn-sm" onclick="saveApiConfig()">Guardar Configuración</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CONTENEDOR DE NOTIFICACIONES FLOTANTES (TOAST)
+       ========================================================================== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ==========================================================================
+       SCRIPTS JAVASCRIPT: LÓGICA DE NEGOCIO, PERSISTENCIA & CRM
+       ========================================================================== -->
+  <script>
+    /**
+     * ==========================================================================
+     * LUMO PROSPECT - SISTEMA DE PROSPECCIÓN COMERCIAL
+     * ==========================================================================
+     */
+
+    const STORAGE_KEY = 'lumo_prospects_db_v1';
+    const API_CONFIG_KEY = 'lumo_api_config_v1';
+
+    // DATOS DEMOSTRATIVOS REALISTAS PARA LIMA METROPOLITANA
+    // Claramente marcados como [DEMO] y sin información ficticia disfrazada de real.
+    const DEMO_PROSPECTS = [
+      {
+        id: "demo-1",
+        isDemo: true,
+        companyName: "Financiera Andina del Perú [DEMO]",
+        sector: "Banca y Finanzas",
+        location: "San Isidro, Lima",
+        size: "450 colaboradores (Grande)",
+        branches: "6 agencias en Lima",
+        website: "https://financieraandina.demo.pe",
+        linkedinCompany: "https://linkedin.com/company/financiera-andina-demo",
+        
+        // Oportunidad & Señal
+        signal: "Contratación masiva: 35 nuevos asesores comerciales y onboarding trimestral programado",
+        signalDate: "2026-03-24",
+        signalSource: "Convocatoria oficial en portal de empleos y LinkedIn",
+        priority: "ALTA",
+        priorityReason: "ALTA PRIORIDAD: 3 señales presentes (contratación masiva, inducción programada y múltiples sedes en Lima).",
+        
+        // Asociación Automática LUMO
+        recommendedService: "Desayunos de bienvenida + Box Lunch + Kits de onboarding (Merchandising)",
+        recommendationReason: "Proceso de incorporación masiva requiere atención protocolar para la inducción y materiales de bienvenida para colaboradores.",
+        
+        // Contacto Clave
+        contactName: "Claudia Morales",
+        contactRole: "Jefa de Talento y Cultura",
+        contactArea: "Recursos Humanos",
+        contactLinkedin: "https://linkedin.com/in/claudia-morales-talento-demo",
+        contactEmail: "No disponible (solicitar vía LinkedIn)",
+        contactPhone: "+51 1 610-0000 (Central San Isidro)",
+        contactSource: "Perfil público de LinkedIn de la empresa",
+        
+        // CRM
+        status: "NUEVO",
+        lastContactDate: null,
+        nextFollowUp: "2026-10-05",
+        notes: [
+          { date: "2026-03-26 10:15", text: "Prospecto detectado por señal de contratación masiva. Ideal para kit de bienvenida y refrigerios de onboarding." }
+        ],
+        salesMessage: "Hola, Claudia. Soy Jenny de LUMO Eventos. Vi que en Financiera Andina vienen incorporando nuevos talentos en Lima y quería presentarte nuestras soluciones de desayunos corporativos, box lunch y kits de bienvenida para procesos de onboarding. Si actualmente están planificando estas actividades, me gustaría compartirte nuestro catálogo y explorar cómo podemos sumar."
+      },
+      {
+        id: "demo-2",
+        isDemo: true,
+        companyName: "PharmaSalud Laboratorios [DEMO]",
+        sector: "Farmacéutica y Salud",
+        location: "San Borja / Ate, Lima",
+        size: "280 colaboradores (Mediana)",
+        branches: "Sede administrativa y planta en Lima",
+        website: "https://pharmasalud.demo.pe",
+        linkedinCompany: "https://linkedin.com/company/pharmasalud-demo",
+        
+        signal: "Anuncio de Convención Anual de Ventas 2026 y lanzamiento de línea pediátrica",
+        signalDate: "2026-03-20",
+        signalSource: "Comunicado oficial institucional en LinkedIn",
+        priority: "ALTA",
+        priorityReason: "ALTA PRIORIDAD: Convención corporativa confirmada de 2 días con asistencia presencial de médicos y delegados.",
+        
+        recommendedService: "Catering corporativo completo + Mobiliario para eventos + Carritos de snacks premium",
+        recommendationReason: "Evento corporativo de gran escala para equipo médico y comercial; requiere estaciones de café continuas y refrigerios ejecutivos.",
+        
+        contactName: "Renzo Valdivia",
+        contactRole: "Coordinador de Marketing y Eventos",
+        contactArea: "Marketing",
+        contactLinkedin: "https://linkedin.com/in/renzo-valdivia-mkt-demo",
+        contactEmail: "No disponible",
+        contactPhone: "No disponible",
+        contactSource: "LinkedIn institucional",
+        
+        status: "CONTACTADO",
+        lastContactDate: "2026-03-28",
+        nextFollowUp: "2026-10-04",
+        notes: [
+          { date: "2026-03-28 11:30", text: "Mensaje inicial enviado por LinkedIn presentando catering para su convención anual." }
+        ],
+        salesMessage: "Hola, Renzo. Soy Jenny de LUMO Eventos. Vi que en PharmaSalud están organizando su próxima Convención Anual y quería presentarte nuestro servicio integral de catering corporativo, estaciones de coffee break y mobiliario para eventos en Lima. Nos encantaría enviarte una propuesta preliminar para que conozcas cómo garantizamos una atención impecable."
+      },
+      {
+        id: "demo-3",
+        isDemo: true,
+        companyName: "Minera del Centro Corp [DEMO]",
+        sector: "Minería e Industria",
+        location: "Santiago de Surco, Lima",
+        size: "800+ colaboradores (Grande)",
+        branches: "Oficina corporativa en Surco y operaciones regionales",
+        website: "https://mineradelcentro.demo.pe",
+        linkedinCompany: "https://linkedin.com/company/minera-centro-demo",
+        
+        signal: "Celebración institucional de 25° Aniversario empresarial el próximo mes",
+        signalDate: "2026-03-15",
+        signalSource: "Memoria de sostenibilidad y publicación corporativa",
+        priority: "ALTA",
+        priorityReason: "ALTA PRIORIDAD: Aniversario hito (Bodas de Plata) con presupuesto corporativo destinado a agasajo y regalos.",
+        
+        recommendedService: "Regalos corporativos de alta gama + Merchandising conmemorativo + Cóctel de catering",
+        recommendationReason: "Fechas institucionales clave representan alta demanda de obsequios ejecutivos y cóctel de agradecimiento para directivos y aliados.",
+        
+        contactName: "Mariana De La Quintana",
+        contactRole: "Gerente de Comunicaciones y Sostenibilidad",
+        contactArea: "Comunicaciones",
+        contactLinkedin: "https://linkedin.com/in/mariana-delaquintana-demo",
+        contactEmail: "No disponible",
+        contactPhone: "+51 1 705-8000",
+        contactSource: "Directorio empresarial público",
+        
+        status: "INTERESADO",
+        lastContactDate: "2026-03-29",
+        nextFollowUp: "2026-10-06",
+        notes: [
+          { date: "2026-03-29 16:45", text: "Respondió vía correo solicitando catálogo de obsequios corporativos de aniversario para 150 ejecutivos." }
+        ],
+        salesMessage: "Hola, Mariana. Soy Jenny de LUMO Eventos. Felicitaciones por el próximo 25° Aniversario de Minera del Centro. En LUMO nos especializamos en regalos corporativos de alta gama y atención de eventos institucionales para fechas memorables. Me encantaría compartirte nuestro catálogo exclusivo de presentes conmemorativos para esta celebración."
+      },
+      {
+        id: "demo-4",
+        isDemo: true,
+        companyName: "TechNovum Perú [DEMO]",
+        sector: "Tecnología",
+        location: "Miraflores, Lima",
+        size: "95 colaboradores (Mediana)",
+        branches: "Sede Miraflores (formato híbrido)",
+        website: "https://technovumperu.demo.com",
+        linkedinCompany: "https://linkedin.com/company/technovum-demo",
+        
+        signal: "Semana del Bienestar y Clima Laboral anunciada para incentivar integración",
+        signalDate: "2026-03-22",
+        signalSource: "Publicación de cultura laboral en LinkedIn",
+        priority: "MEDIA",
+        priorityReason: "PRIORIDAD MEDIA: Campaña interna programada para fecha específica, oportunidad directa en bienestar e integración.",
+        
+        recommendedService: "Carritos de snacks saludables + Coffee break interactivo + Activación de integración",
+        recommendationReason: "Las semanas de bienestar en empresas tech buscan dinamismo mediante experiencias atractivas para incentivar la asistencia presencial.",
+        
+        contactName: "Diego Cárdenas",
+        contactRole: "People & Culture Lead",
+        contactArea: "Bienestar y Cultura",
+        contactLinkedin: "https://linkedin.com/in/diego-cardenas-hr-demo",
+        contactEmail: "No disponible",
+        contactPhone: "No disponible",
+        contactSource: "LinkedIn",
+        
+        status: "COTIZACIÓN",
+        lastContactDate: "2026-03-30",
+        nextFollowUp: "2026-10-03",
+        notes: [
+          { date: "2026-03-30 09:20", text: "Se envió cotización formal para 2 carritos de snacks (palomitas gourmet y crepas) y coffee saludable para 80 personas." }
+        ],
+        salesMessage: "Hola, Diego. Soy Jenny de LUMO Eventos. Vi que en TechNovum están impulsando iniciativas de bienestar y clima laboral para su equipo en Miraflores. En LUMO contamos con carritos de snacks temáticos y coffee breaks interactivos ideales para dinámicas de integración. Si gustan evaluar opciones para su Semana Wellness, estaré feliz de cotizarles sin compromiso."
+      },
+      {
+        id: "demo-5",
+        isDemo: true,
+        companyName: "Retail Express Logística [DEMO]",
+        sector: "Retail y Consumo",
+        location: "Lurín / Villa El Salvador, Lima",
+        size: "320 colaboradores (Mediana-Grande)",
+        branches: "3 centros de distribución en Lima Sur",
+        website: "https://retailexpress.demo.pe",
+        linkedinCompany: "https://linkedin.com/company/retail-express-demo",
+        
+        signal: "Inauguración de nuevo centro de distribución automatizado en Lurín",
+        signalDate: "2026-03-18",
+        signalSource: "Portal de noticias logísticas del Perú",
+        priority: "MEDIA",
+        priorityReason: "PRIORIDAD MEDIA: Hito de corte de cinta y recepción protocolar para directivos, proveedores y contratistas.",
+        
+        recommendedService: "Catering para corte de cinta + Box Lunch para operarios + Activación BTL",
+        recommendationReason: "La inauguración de una planta requiere un protocolo formal con refrigerios ejecutivos y atención rápida para personal operativo.",
+        
+        contactName: "Pamela Santillán",
+        contactRole: "Jefa de Administración y Servicios Generales",
+        contactArea: "Administración",
+        contactLinkedin: "https://linkedin.com/in/pamela-santillan-demo",
+        contactEmail: "No disponible",
+        contactPhone: "+51 1 540-3000",
+        contactSource: "Web pública de la empresa",
+        
+        status: "RESPONDIÓ",
+        lastContactDate: "2026-03-27",
+        nextFollowUp: "2026-10-07",
+        notes: [
+          { date: "2026-03-27 15:10", text: "Indicó que evaluarán servicios de refrigerios para la ceremonia del próximo mes y pidió enviar presentación de box lunch." }
+        ],
+        salesMessage: "Hola, Pamela. Soy Jenny de LUMO Eventos. Felicitaciones por la nueva sede de Retail Express en Lurín. Sabemos que las aperturas requieren una logística impecable; en LUMO brindamos soluciones completas de box lunch para equipos operativos y catering ejecutivo para ceremonias de inauguración. Me encantaría coordinar unos minutos para enviarte nuestras alternativas."
+      },
+      {
+        id: "demo-6",
+        isDemo: true,
+        companyName: "Inmobiliaria Vértice Lima [DEMO]",
+        sector: "Inmobiliaria",
+        location: "San Isidro, Lima",
+        size: "60 colaboradores (Mediana)",
+        branches: "Oficina central y 4 salas de venta en Lima Moderna",
+        website: "https://verticeinmobiliaria.demo.pe",
+        linkedinCompany: "https://linkedin.com/company/vertice-lima-demo",
+        
+        signal: "Lanzamiento de dos proyectos residenciales en preventa y eventos Open House",
+        signalDate: "2026-03-25",
+        signalSource: "Redes sociales oficiales y pauta comercial",
+        priority: "ALTA",
+        priorityReason: "ALTA PRIORIDAD: Eventos recurrentes de preventa inmobiliaria los fines de semana en salas de venta en Lima.",
+        
+        recommendedService: "Catering para open house + Carrito de café/snacks + Mobiliario lounge",
+        recommendationReason: "Las preventas inmobiliarias requieren atención cálida y permanente a clientes e inversionistas durante varias semanas consecutivas.",
+        
+        contactName: "Javier Barrenechea",
+        contactRole: "Subgerente de Marketing Comercial",
+        contactArea: "Marketing",
+        contactLinkedin: "https://linkedin.com/in/javier-barrenechea-demo",
+        contactEmail: "No disponible",
+        contactPhone: "No disponible",
+        contactSource: "LinkedIn comercial",
+        
+        status: "NUEVO",
+        lastContactDate: null,
+        nextFollowUp: "2026-10-04",
+        notes: [
+          { date: "2026-03-26 14:00", text: "Detectado por anuncio de preventa en Miraflores y Surquillo. Requieren atención de café para clientes." }
+        ],
+        salesMessage: "Hola, Javier. Soy Jenny de LUMO Eventos. Vi el lanzamiento de sus nuevos proyectos residenciales en Lima y quería comentarte sobre nuestros servicios de coffee station continua, carritos de snacks gourmet y mobiliario lounge para salas de venta y eventos de preventa. Si buscan deleitar a sus visitantes en las casetas, me gustaría enviarte nuestra propuesta."
+      },
+      {
+        id: "demo-7",
+        isDemo: true,
+        companyName: "Colegio & Instituto San Gabriel [DEMO]",
+        sector: "Educación",
+        location: "La Molina / San Borja, Lima",
+        size: "180 colaboradores (Mediana)",
+        branches: "2 campus en Lima",
+        website: "https://sangabriel.demo.edu.pe",
+        linkedinCompany: "https://linkedin.com/school/sangabriel-demo",
+        
+        signal: "Jornada anual de capacitación docente y bienvenida académica",
+        signalDate: "2026-03-12",
+        signalSource: "Calendario académico público",
+        priority: "MEDIA",
+        priorityReason: "PRIORIDAD MEDIA: Actividad corporativa y pedagógica anual para 120 docentes durante 3 mañanas.",
+        
+        recommendedService: "Coffee breaks recurrentes (3 días) + Merchandising institucional",
+        recommendationReason: "Jornadas prolongadas de capacitación académica demandan refrigerios estructurados y pausas de café para mantener la concentración.",
+        
+        contactName: "Lucía Mendoza",
+        contactRole: "Coordinadora Administrativa",
+        contactArea: "Administración",
+        contactLinkedin: "https://linkedin.com/in/lucia-mendoza-admin-demo",
+        contactEmail: "No disponible",
+        contactPhone: "+51 1 436-1200",
+        contactSource: "Directorio institucional público",
+        
+        status: "NUEVO",
+        lastContactDate: null,
+        nextFollowUp: "2026-10-08",
+        notes: [
+          { date: "2026-03-26 17:30", text: "Oportunidad para jornadas de capacitación pedagógica y pausas de café institucionales." }
+        ],
+        salesMessage: "Hola, Lucía. Soy Jenny de LUMO Eventos. Conociendo las jornadas de capacitación y bienvenida para su plana docente en Lima, quería presentarte nuestros paquetes de coffee break corporativo y refrigerios para instituciones educativas. Nos encantaría cotizarles un servicio puntual y de primera calidad para sus próximas actividades."
+      }
+    ];
+
+    // ESTADO DE LA APLICACIÓN
+    let prospectsState = [];
+    let currentFilteredProspects = [];
+    let activeProspectId = null;
+    let activeFilterStatus = 'todos';
+    let activeFilterPriority = 'todas';
+    let currentViewMode = 'table'; // 'table' o 'cards'
+
+    // ==========================================================================
+    // INICIALIZACIÓN
+    // ==========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      initDatabase();
+      renderDashboardKPIs();
+      applyFilters();
+      setupResponsiveListeners();
+    });
+
+    /**
+     * Inicializa LocalStorage con datos demo si está vacío
+     */
+    function initDatabase() {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (!stored) {
+        prospectsState = JSON.parse(JSON.stringify(DEMO_PROSPECTS));
+        saveToLocalStorage(false);
+      } else {
+        try {
+          prospectsState = JSON.parse(stored);
+        } catch (e) {
+          console.error("Error al leer localStorage, restaurando demo:", e);
+          prospectsState = JSON.parse(JSON.stringify(DEMO_PROSPECTS));
+          saveToLocalStorage(false);
+        }
+      }
+    }
+
+    function saveToLocalStorage(notify = true, message = "Cambios guardados.") {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(prospectsState));
+      renderDashboardKPIs();
+      if (notify) {
+        showToast(message);
+      }
+    }
+
+    function resetDemoDataPrompt() {
+      if (confirm("¿Deseas restablecer la lista de prospectos a los casos DEMO iniciales de Lima? Se perderán las modificaciones no exportadas.")) {
+        prospectsState = JSON.parse(JSON.stringify(DEMO_PROSPECTS));
+        saveToLocalStorage(true, "Datos DEMO restablecidos correctamente.");
+        applyFilters();
+      }
+    }
+
+    // ==========================================================================
+    // RENDERIZADO DEL DASHBOARD & KPIs
+    // ==========================================================================
+    function renderDashboardKPIs() {
+      const counts = {
+        NUEVO: 0,
+        CONTACTADO: 0,
+        RESPONDIÓ: 0,
+        INTERESADO: 0,
+        COTIZACIÓN: 0,
+        CERRADO: 0,
+        'NO INTERESADO': 0
+      };
+
+      let pendingFollowUps = 0;
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      prospectsState.forEach(p => {
+        if (counts[p.status] !== undefined) {
+          counts[p.status]++;
+        }
+        if (p.nextFollowUp && p.nextFollowUp <= todayStr && p.status !== 'CERRADO' && p.status !== 'NO INTERESADO') {
+          pendingFollowUps++;
+        }
+      });
+
+      document.getElementById('kpi-nuevo-count').textContent = counts.NUEVO;
+      document.getElementById('kpi-contactado-count').textContent = counts.CONTACTADO;
+      document.getElementById('kpi-interesado-count').textContent = counts.INTERESADO;
+      document.getElementById('kpi-cotizacion-count').textContent = counts.COTIZACIÓN;
+      document.getElementById('kpi-cerrado-count').textContent = counts.CERRADO;
+      document.getElementById('kpi-seguimiento-count').textContent = pendingFollowUps;
+    }
+
+    // ==========================================================================
+    // FILTROS Y BÚSQUEDA
+    // ==========================================================================
+    function applyFilters() {
+      const searchTerm = document.getElementById('quickSearchInput').value.trim().toLowerCase();
+      const priorityFilter = document.getElementById('filterPrioritySelect').value;
+      const statusFilter = document.getElementById('filterStatusSelect').value;
+
+      activeFilterPriority = priorityFilter;
+      activeFilterStatus = statusFilter;
+
+      currentFilteredProspects = prospectsState.filter(item => {
+        // Filtro por texto
+        const matchSearch = !searchTerm || (
+          (item.companyName && item.companyName.toLowerCase().includes(searchTerm)) ||
+          (item.sector && item.sector.toLowerCase().includes(searchTerm)) ||
+          (item.signal && item.signal.toLowerCase().includes(searchTerm)) ||
+          (item.recommendedService && item.recommendedService.toLowerCase().includes(searchTerm)) ||
+          (item.contactName && item.contactName.toLowerCase().includes(searchTerm)) ||
+          (item.location && item.location.toLowerCase().includes(searchTerm))
+        );
+
+        // Filtro por prioridad
+        const matchPriority = priorityFilter === 'todas' || item.priority === priorityFilter;
+
+        // Filtro por estado
+        const matchStatus = statusFilter === 'todos' || item.status === statusFilter;
+
+        return matchSearch && matchPriority && matchStatus;
+      });
+
+      renderProspectsList();
+      updateCountIndicator();
+    }
+
+    function handleQuickSearch() {
+      applyFilters();
+    }
+
+    function filterByStatus(statusName) {
+      document.getElementById('filterStatusSelect').value = statusName;
+      applyFilters();
+      showToast(`Filtrando por estado: ${statusName}`);
+    }
+
+    function filterByPendingFollowups() {
+      const todayStr = new Date().toISOString().split('T')[0];
+      document.getElementById('filterStatusSelect').value = 'todos';
+      document.getElementById('filterPrioritySelect').value = 'todas';
+      document.getElementById('quickSearchInput').value = '';
+
+      currentFilteredProspects = prospectsState.filter(item => {
+        return item.nextFollowUp && item.nextFollowUp <= todayStr && item.status !== 'CERRADO' && item.status !== 'NO INTERESADO';
+      });
+
+      renderProspectsList();
+      updateCountIndicator("Mostrando seguimientos pendientes o programados para hoy");
+      showToast("Mostrando prospectos con seguimiento pendiente");
+    }
+
+    function clearAllFilters() {
+      document.getElementById('quickSearchInput').value = '';
+      document.getElementById('filterPrioritySelect').value = 'todas';
+      document.getElementById('filterStatusSelect').value = 'todos';
+      applyFilters();
+      showToast("Filtros restablecidos.");
+    }
+
+    function updateCountIndicator(customText = null) {
+      const countEl = document.getElementById('resultsCount');
+      if (customText) {
+        countEl.textContent = `${customText} (${currentFilteredProspects.length})`;
+      } else {
+        countEl.textContent = `Mostrando ${currentFilteredProspects.length} de ${prospectsState.length} prospectos comerciales`;
+      }
+
+      const emptyEl = document.getElementById('emptyResultsState');
+      const tableContainer = document.getElementById('tableContainer');
+      const cardsContainer = document.getElementById('cardsContainer');
+
+      if (currentFilteredProspects.length === 0) {
+        emptyEl.style.display = 'block';
+        tableContainer.style.display = 'none';
+        cardsContainer.style.display = 'none';
+      } else {
+        emptyEl.style.display = 'none';
+        if (currentViewMode === 'table') {
+          tableContainer.style.display = 'block';
+          cardsContainer.style.display = 'none';
+        } else {
+          tableContainer.style.display = 'none';
+          cardsContainer.style.display = 'grid';
+        }
+      }
+    }
+
+    // ==========================================================================
+    // RENDERIZADO DE TABLA Y TARJETAS
+    // ==========================================================================
+    function renderProspectsList() {
+      renderTable();
+      renderCards();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('prospectsTableBody');
+      tbody.innerHTML = '';
+
+      currentFilteredProspects.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.style.cursor = 'pointer';
+        tr.onclick = (e) => {
+          // Evitar que el clic en botones internos vuelva a abrir el modal
+          if (!e.target.closest('button') && !e.target.closest('select')) {
+            openDetailModal(p.id);
+          }
+        };
+
+        const demoBadge = p.isDemo ? `<span class="badge badge-demo">DEMO</span>` : '';
+        const priorityClass = `badge-prio-${p.priority}`;
+        const statusClass = `badge-status-${p.status.replace(/\s+/g, '-')}`;
+
+        // Formato de próximo seguimiento
+        let followUpHtml = '<span class="follow-up-none">Sin fecha</span>';
+        if (p.nextFollowUp) {
+          const today = new Date().toISOString().split('T')[0];
+          if (p.nextFollowUp < today && p.status !== 'CERRADO') {
+            followUpHtml = `<span class="follow-up-pending" title="Vencido">&#9888; ${p.nextFollowUp}</span>`;
+          } else if (p.nextFollowUp === today) {
+            followUpHtml = `<span class="follow-up-pending" title="Para hoy">&#9679; Hoy (${p.nextFollowUp})</span>`;
+          } else {
+            followUpHtml = `<span class="follow-up-future">${p.nextFollowUp}</span>`;
+          }
+        }
+
+        tr.innerHTML = `
+          <td>
+            <div class="company-cell">
+              <div class="company-name">
+                ${escapeHtml(p.companyName)} ${demoBadge}
+              </div>
+              <div class="company-meta">
+                <span>📍 ${escapeHtml(p.location || 'Lima')}</span>
+                <span>• ${escapeHtml(p.size || 'Tamaño no disp.')}</span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <span style="font-size:0.8rem; color: #475569;">${escapeHtml(p.sector || 'General')}</span>
+          </td>
+          <td>
+            <span class="badge ${priorityClass}" title="${escapeHtml(p.priorityReason || '')}">
+              ${p.priority}
+            </span>
+          </td>
+          <td>
+            <div class="signal-cell">
+              <div class="signal-text" title="${escapeHtml(p.signal)}">
+                ${escapeHtml(p.signal)}
+              </div>
+              <div class="signal-date">📅 ${p.signalDate || 'Fecha no disp.'}</div>
+            </div>
+          </td>
+          <td>
+            <span class="service-badge" title="${escapeHtml(p.recommendedService)}">
+              ${escapeHtml(p.recommendedService)}
+            </span>
+          </td>
+          <td>
+            <div class="contact-cell">
+              <div class="contact-name">${escapeHtml(p.contactName || 'No identificado')}</div>
+              <div class="contact-role">${escapeHtml(p.contactRole || 'Área no disp.')}</div>
+            </div>
+          </td>
+          <td>
+            <span class="badge ${statusClass}">
+              ${p.status}
+            </span>
+          </td>
+          <td>
+            <div class="follow-up-cell">${followUpHtml}</div>
+          </td>
+          <td style="text-align: right;">
+            <button class="btn btn-outline-gold btn-sm" onclick="openDetailModal('${p.id}')">
+              Ver Ficha
+            </button>
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function renderCards() {
+      const container = document.getElementById('cardsContainer');
+      container.innerHTML = '';
+
+      currentFilteredProspects.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'prospect-card';
+
+        const demoBadge = p.isDemo ? `<span class="badge badge-demo">DEMO</span>` : '';
+        const priorityClass = `badge-prio-${p.priority}`;
+        const statusClass = `badge-status-${p.status.replace(/\s+/g, '-')}`;
+
+        let followUpHtml = '<span>Sin seguimiento</span>';
+        if (p.nextFollowUp) {
+          followUpHtml = `<span>📅 Próx: ${p.nextFollowUp}</span>`;
+        }
+
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <div>
+                <div class="card-company-title">
+                  ${escapeHtml(p.companyName)} ${demoBadge}
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">
+                  📍 ${escapeHtml(p.location || 'Lima')} • ${escapeHtml(p.sector || 'Rubro no esp.')}
+                </div>
+              </div>
+              <span class="badge ${priorityClass}">${p.priority}</span>
+            </div>
+
+            <div class="card-tags">
+              <span class="badge ${statusClass}">${p.status}</span>
+              <span style="font-size:0.75rem; color:#64748B;">${escapeHtml(p.size || '')}</span>
+            </div>
+          </div>
+
+          <div class="card-body-section">
+            <div class="card-section-label">Señal de Oportunidad</div>
+            <div class="card-signal-desc">${escapeHtml(p.signal)}</div>
+            <div style="font-size: 0.72rem; color: var(--text-light); margin-bottom: 6px;">
+              Fuente: ${escapeHtml(p.signalSource || 'No disponible')}
+            </div>
+
+            <div class="card-section-label" style="margin-top: 8px;">Servicio Sugerido LUMO</div>
+            <div class="card-service-rec">${escapeHtml(p.recommendedService)}</div>
+          </div>
+
+          <div class="card-contact-box">
+            <div class="contact-avatar">
+              ${(p.contactName && p.contactName !== 'No disponible') ? p.contactName.charAt(0).toUpperCase() : '?'}
+            </div>
+            <div>
+              <div style="font-weight: 600; color: var(--text-main); font-size: 0.82rem;">
+                ${escapeHtml(p.contactName || 'Contacto no identificado')}
+              </div>
+              <div style="font-size: 0.74rem; color: var(--text-muted);">
+                ${escapeHtml(p.contactRole || 'Cargo no disp.')}
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div style="font-size: 0.75rem; color: var(--text-muted);">
+              ${followUpHtml}
+            </div>
+            <button class="btn btn-outline-gold btn-sm" onclick="openDetailModal('${p.id}')">
+              Ver Prospecto
+            </button>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function switchView(mode) {
+      currentViewMode = mode;
+      const btnTable = document.getElementById('viewBtnTable');
+      const btnCards = document.getElementById('viewBtnCards');
+      const tableContainer = document.getElementById('tableContainer');
+      const cardsContainer = document.getElementById('cardsContainer');
+
+      if (mode === 'table') {
+        btnTable.classList.add('active');
+        btnCards.classList.remove('active');
+        tableContainer.style.display = 'block';
+        cardsContainer.style.display = 'none';
+      } else {
+        btnCards.classList.add('active');
+        btnTable.classList.remove('active');
+        tableContainer.style.display = 'none';
+        cardsContainer.style.display = 'grid';
+      }
+    }
+
+    function setupResponsiveListeners() {
+      const mediaQuery = window.matchMedia('(max-width: 900px)');
+      function handleScreenChange(e) {
+        if (e.matches) {
+          switchView('cards');
+        } else {
+          switchView('table');
+        }
+      }
+      mediaQuery.addEventListener('change', handleScreenChange);
+      if (mediaQuery.matches) {
+        switchView('cards');
+      }
+    }
+
+    // ==========================================================================
+    // MODAL DE DETALLE (FICHA DEL PROSPECTO)
+    // ==========================================================================
+    function openDetailModal(prospectId) {
+      const p = prospectsState.find(item => item.id === prospectId);
+      if (!p) return;
+
+      activeProspectId = prospectId;
+
+      document.getElementById('modalCompanyName').textContent = p.companyName;
+      document.getElementById('modalDemoBadge').style.display = p.isDemo ? 'inline-flex' : 'none';
+
+      const prioBadge = document.getElementById('modalPriorityBadge');
+      prioBadge.className = `badge badge-prio-${p.priority}`;
+      prioBadge.textContent = `${p.priority} PRIORIDAD`;
+
+      // Pipeline
+      updatePipelineUI(p.status);
+
+      // Empresa
+      document.getElementById('modalCompanySector').textContent = p.sector || 'No disponible';
+      document.getElementById('modalCompanyLocation').textContent = p.location || 'Lima Metropolitana';
+      document.getElementById('modalCompanySize').textContent = p.size || 'No disponible';
+      document.getElementById('modalCompanyBranches').textContent = p.branches || 'No disponible';
+      
+      const webEl = document.getElementById('modalCompanyWeb');
+      if (p.website && p.website !== 'No disponible') {
+        webEl.innerHTML = `<a href="${escapeHtml(p.website)}" target="_blank" rel="noopener">${escapeHtml(p.website)}</a>`;
+      } else {
+        webEl.textContent = 'No disponible';
+      }
+
+      const lkEl = document.getElementById('modalCompanyLinkedin');
+      if (p.linkedinCompany && p.linkedinCompany !== 'No disponible') {
+        lkEl.innerHTML = `<a href="${escapeHtml(p.linkedinCompany)}" target="_blank" rel="noopener">Ver Perfil</a>`;
+      } else {
+        lkEl.textContent = 'No disponible';
+      }
+
+      // Contacto
+      document.getElementById('modalContactName').textContent = p.contactName || 'No disponible';
+      document.getElementById('modalContactRole').textContent = p.contactRole || 'No disponible';
+      document.getElementById('modalContactArea').textContent = p.contactArea || 'No disponible';
+      
+      const contactLkEl = document.getElementById('modalContactLinkedin');
+      if (p.contactLinkedin && p.contactLinkedin !== 'No disponible') {
+        contactLkEl.innerHTML = `<a href="${escapeHtml(p.contactLinkedin)}" target="_blank" rel="noopener">Ver LinkedIn del contacto</a>`;
+      } else {
+        contactLkEl.textContent = 'No disponible';
+      }
+
+      document.getElementById('modalContactEmail').textContent = p.contactEmail || 'No disponible';
+      document.getElementById('modalContactPhone').textContent = p.contactPhone || 'No disponible';
+      document.getElementById('modalContactSource').textContent = p.contactSource || 'Fuente no especificada';
+
+      // Oportunidad & LUMO
+      document.getElementById('modalOpportunitySignal').textContent = p.signal;
+      document.getElementById('modalOpportunityDate').textContent = p.signalDate || 'No disponible';
+      document.getElementById('modalOpportunitySource').textContent = p.signalSource || 'No disponible';
+      document.getElementById('modalPriorityReason').textContent = p.priorityReason || 'Priorización calculada según número de señales.';
+
+      document.getElementById('modalRecommendedService').textContent = p.recommendedService;
+      document.getElementById('modalRecommendationReason').textContent = p.recommendationReason;
+
+      // Mensaje comercial sugerido
+      document.getElementById('modalSalesMessageText').value = p.salesMessage || generateCommercialPitch(p);
+
+      // Seguimiento y notas
+      document.getElementById('modalNextFollowUpInput').value = p.nextFollowUp || '';
+      document.getElementById('modalLastContactLabel').textContent = p.lastContactDate ? `Último contacto registrado: ${p.lastContactDate}` : 'Último contacto: Sin registro aún';
+      document.getElementById('modalNewNoteInput').value = '';
+
+      renderNotesTimeline(p.notes || []);
+
+      document.getElementById('detailModalOverlay').classList.add('active');
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detailModalOverlay').classList.remove('active');
+      activeProspectId = null;
+    }
+
+    function updatePipelineUI(currentStatus) {
+      const steps = document.querySelectorAll('#pipelineStepper .pipeline-step');
+      steps.forEach(step => {
+        const stepStatus = step.textContent.trim().toUpperCase();
+        if (stepStatus === currentStatus.toUpperCase()) {
+          step.classList.add('active');
+        } else {
+          step.classList.remove('active');
+        }
+      });
+    }
+
+    function changeCurrentProspectStatus(newStatus) {
+      if (!activeProspectId) return;
+      const p = prospectsState.find(item => item.id === activeProspectId);
+      if (p) {
+        const oldStatus = p.status;
+        p.status = newStatus;
+        if (newStatus === 'CONTACTADO' && !p.lastContactDate) {
+          p.lastContactDate = new Date().toISOString().split('T')[0];
+        }
+
+        // Agregar nota automática de cambio de estado
+        if (!p.notes) p.notes = [];
+        p.notes.unshift({
+          date: formatDateTime(new Date()),
+          text: `Estado cambiado de "${oldStatus}" a "${newStatus}".`
+        });
+
+        saveToLocalStorage(true, `Estado actualizado a "${newStatus}".`);
+        updatePipelineUI(newStatus);
+        renderNotesTimeline(p.notes);
+        applyFilters();
+      }
+    }
+
+    function saveFollowUpDate() {
+      if (!activeProspectId) return;
+      const p = prospectsState.find(item => item.id === activeProspectId);
+      const newDate = document.getElementById('modalNextFollowUpInput').value;
+      if (p) {
+        p.nextFollowUp = newDate;
+        if (!p.notes) p.notes = [];
+        p.notes.unshift({
+          date: formatDateTime(new Date()),
+          text: `Próximo seguimiento programado para el ${newDate || 'sin fecha'}.`
+        });
+        saveToLocalStorage(true, "Seguimiento registrado con éxito.");
+        renderNotesTimeline(p.notes);
+        applyFilters();
+      }
+    }
+
+    function addProspectNote() {
+      if (!activeProspectId) return;
+      const p = prospectsState.find(item => item.id === activeProspectId);
+      const noteInput = document.getElementById('modalNewNoteInput');
+      const text = noteInput.value.trim();
+
+      if (!text) {
+        showToast("Por favor escribe una nota antes de agregar.");
+        return;
+      }
+
+      if (p) {
+        if (!p.notes) p.notes = [];
+        p.notes.unshift({
+          date: formatDateTime(new Date()),
+          text: text
+        });
+        p.lastContactDate = new Date().toISOString().split('T')[0];
+
+        noteInput.value = '';
+        saveToLocalStorage(true, "Nota agregada al historial.");
+        renderNotesTimeline(p.notes);
+        document.getElementById('modalLastContactLabel').textContent = `Último contacto registrado: ${p.lastContactDate}`;
+      }
+    }
+
+    function renderNotesTimeline(notes) {
+      const container = document.getElementById('modalNotesTimeline');
+      container.innerHTML = '';
+
+      if (!notes || notes.length === 0) {
+        container.innerHTML = `<div style="font-size: 0.78rem; color: var(--text-light); font-style: italic; padding: 6px 0;">No hay notas registradas para este prospecto.</div>`;
+        return;
+      }
+
+      notes.forEach(note => {
+        const item = document.createElement('div');
+        item.className = 'note-bubble';
+        item.innerHTML = `
+          <div class="note-date">🕒 ${escapeHtml(note.date)}</div>
+          <div class="note-text">${escapeHtml(note.text)}</div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function copySalesMessage() {
+      const textarea = document.getElementById('modalSalesMessageText');
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textarea.value)
+          .then(() => {
+            showToast("Mensaje comercial copiado al portapapeles.");
+          })
+          .catch(() => {
+            document.execCommand('copy');
+            showToast("Mensaje comercial copiado.");
+          });
+      } else {
+        document.execCommand('copy');
+        showToast("Mensaje comercial copiado.");
+      }
+    }
+
+    function openWhatsAppContact() {
+      if (!activeProspectId) return;
+      const p = prospectsState.find(item => item.id === activeProspectId);
+      if (!p) return;
+
+      const message = encodeURIComponent(document.getElementById('modalSalesMessageText').value);
+      
+      // Si el prospecto tiene teléfono con números
+      const cleanPhone = (p.contactPhone || '').replace(/[^0-9]/g, '');
+      if (cleanPhone && cleanPhone.length >= 9) {
+        window.open(`https://wa.me/${cleanPhone}?text=${message}`, '_blank');
+      } else {
+        window.open(`https://wa.me/?text=${message}`, '_blank');
+        showToast("Abriendo WhatsApp Web con el mensaje prellenado.");
+      }
+    }
+
+    function openEmailContact() {
+      if (!activeProspectId) return;
+      const p = prospectsState.find(item => item.id === activeProspectId);
+      if (!p) return;
+
+      const email = (p.contactEmail && p.contactEmail.includes('@')) ? p.contactEmail : '';
+      const subject = encodeURIComponent(`Soluciones para eventos y actividades corporativas - LUMO Eventos`);
+      const body = encodeURIComponent(document.getElementById('modalSalesMessageText').value);
+
+      window.open(`mailto:${email}?subject=${subject}&body=${body}`, '_blank');
+    }
+
+    function deleteCurrentProspectPrompt() {
+      if (!activeProspectId) return;
+      const p = prospectsState.find(item => item.id === activeProspectId);
+      if (!p) return;
+
+      if (confirm(`¿Estás seguro de eliminar el prospecto "${p.companyName}"? Esta acción no se puede deshacer.`)) {
+        prospectsState = prospectsState.filter(item => item.id !== activeProspectId);
+        saveToLocalStorage(true, "Prospecto eliminado correctamente.");
+        closeDetailModal();
+        applyFilters();
+      }
+    }
+
+    // ==========================================================================
+    // MODAL DE CREAR / EDITAR PROSPECTO
+    // ==========================================================================
+    function openCreateModal() {
+      document.getElementById('formModalTitle').textContent = "Registrar Nuevo Prospecto";
+      document.getElementById('prospectForm').reset();
+      document.getElementById('formProspectId').value = "";
+      document.getElementById('formCompanyLocation').value = "Lima Metropolitana";
+      document.getElementById('formPriority').value = "MEDIA";
+      document.getElementById('formStatus').value = "NUEVO";
+      document.getElementById('formSignalDate').value = new Date().toISOString().split('T')[0];
+
+      document.getElementById('formModalOverlay').classList.add('active');
+    }
+
+    function openEditModalForCurrent() {
+      if (!activeProspectId) return;
+      const p = prospectsState.find(item => item.id === activeProspectId);
+      if (!p) return;
+
+      closeDetailModal();
+
+      document.getElementById('formModalTitle').textContent = "Editar Prospecto";
+      document.getElementById('formProspectId').value = p.id;
+      document.getElementById('formCompanyName').value = p.companyName;
+      document.getElementById('formCompanySector').value = p.sector || 'Banca y Finanzas';
+      document.getElementById('formCompanyLocation').value = p.location || 'Lima Metropolitana';
+      document.getElementById('formCompanySize').value = p.size || '';
+      document.getElementById('formCompanyBranches').value = p.branches || '';
+      document.getElementById('formCompanyWeb').value = p.website || '';
+      document.getElementById('formCompanyLinkedin').value = p.linkedinCompany || '';
+
+      document.getElementById('formSignalDesc').value = p.signal || '';
+      document.getElementById('formSignalDate').value = p.signalDate || '';
+      document.getElementById('formSignalSource').value = p.signalSource || '';
+      document.getElementById('formPriority').value = p.priority || 'MEDIA';
+      document.getElementById('formPriorityReason').value = p.priorityReason || '';
+      document.getElementById('formRecommendedService').value = p.recommendedService || '';
+      document.getElementById('formRecommendationReason').value = p.recommendationReason || '';
+
+      document.getElementById('formContactName').value = p.contactName || '';
+      document.getElementById('formContactRole').value = p.contactRole || '';
+      document.getElementById('formContactArea').value = p.contactArea || 'Recursos Humanos';
+      document.getElementById('formContactLinkedin').value = p.contactLinkedin || '';
+      document.getElementById('formContactEmail').value = p.contactEmail || '';
+      document.getElementById('formContactPhone').value = p.contactPhone || '';
+      document.getElementById('formContactSource').value = p.contactSource || '';
+
+      document.getElementById('formStatus').value = p.status || 'NUEVO';
+      document.getElementById('formNextFollowUp').value = p.nextFollowUp || '';
+      document.getElementById('formCustomMessage').value = p.salesMessage || '';
+
+      document.getElementById('formModalOverlay').classList.add('active');
+    }
+
+    function closeFormModal() {
+      document.getElementById('formModalOverlay').classList.remove('active');
+    }
+
+    function handleSaveProspectForm(event) {
+      event.preventDefault();
+
+      const id = document.getElementById('formProspectId').value;
+      const companyName = document.getElementById('formCompanyName').value.trim();
+      if (!companyName) {
+        alert("El nombre de la empresa es obligatorio.");
+        return;
+      }
+
+      const isEdit = !!id;
+      let prospect = isEdit ? prospectsState.find(item => item.id === id) : {};
+
+      if (!isEdit) {
+        prospect.id = 'manual-' + Date.now();
+        prospect.isDemo = false;
+        prospect.notes = [{
+          date: formatDateTime(new Date()),
+          text: "Prospecto registrado en el sistema."
+        }];
+      }
+
+      prospect.companyName = companyName;
+      prospect.sector = document.getElementById('formCompanySector').value;
+      prospect.location = document.getElementById('formCompanyLocation').value || 'Lima Metropolitana';
+      prospect.size = document.getElementById('formCompanySize').value || 'No disponible';
+      prospect.branches = document.getElementById('formCompanyBranches').value || 'No disponible';
+      prospect.website = document.getElementById('formCompanyWeb').value || 'No disponible';
+      prospect.linkedinCompany = document.getElementById('formCompanyLinkedin').value || 'No disponible';
+
+      prospect.signal = document.getElementById('formSignalDesc').value;
+      prospect.signalDate = document.getElementById('formSignalDate').value || new Date().toISOString().split('T')[0];
+      prospect.signalSource = document.getElementById('formSignalSource').value || 'Registro manual';
+      prospect.priority = document.getElementById('formPriority').value;
+      prospect.priorityReason = document.getElementById('formPriorityReason').value || `${prospect.priority} PRIORIDAD por señales detectadas.`;
+
+      prospect.recommendedService = document.getElementById('formRecommendedService').value;
+      prospect.recommendationReason = document.getElementById('formRecommendationReason').value || 'Atención recomendada según señal detectada.';
+
+      prospect.contactName = document.getElementById('formContactName').value || 'No disponible';
+      prospect.contactRole = document.getElementById('formContactRole').value || 'No disponible';
+      prospect.contactArea = document.getElementById('formContactArea').value || 'No disponible';
+      prospect.contactLinkedin = document.getElementById('formContactLinkedin').value || 'No disponible';
+      prospect.contactEmail = document.getElementById('formContactEmail').value || 'No disponible';
+      prospect.contactPhone = document.getElementById('formContactPhone').value || 'No disponible';
+      prospect.contactSource = document.getElementById('formContactSource').value || 'Registro manual';
+
+      prospect.status = document.getElementById('formStatus').value;
+      prospect.nextFollowUp = document.getElementById('formNextFollowUp').value || null;
+
+      const customMsg = document.getElementById('formCustomMessage').value.trim();
+      prospect.salesMessage = customMsg || generateCommercialPitch(prospect);
+
+      if (!isEdit) {
+        prospectsState.unshift(prospect);
+      }
+
+      saveToLocalStorage(true, isEdit ? "Prospecto actualizado correctamente." : "Prospecto guardado correctamente.");
+      closeFormModal();
+      applyFilters();
+      openDetailModal(prospect.id);
+    }
+
+    /**
+     * Auto-sugiere servicio LUMO basado en texto de la señal en el formulario
+     */
+    function autoSuggestLumoService() {
+      const signal = document.getElementById('formSignalDesc').value.toLowerCase();
+      const serviceField = document.getElementById('formRecommendedService');
+      const reasonField = document.getElementById('formRecommendationReason');
+
+      if (signal.includes('contrat') || signal.includes('personal') || signal.includes('onboarding') || signal.includes('nuevo')) {
+        serviceField.value = "Desayunos de bienvenida + Box Lunch + Kits de onboarding (Merchandising)";
+        reasonField.value = "Se detectó proceso de incorporación de personal; ideal para kits de bienvenida y refrigerios de inducción.";
+      } else if (signal.includes('aniversario') || signal.includes('celebr') || signal.includes('año')) {
+        serviceField.value = "Regalos corporativos conmemorativos + Merchandising de aniversario + Catering";
+        reasonField.value = "Aniversario institucional representa alta demanda de obsequios conmemorativos y cóctel de agasajo.";
+      } else if (signal.includes('convenci') || signal.includes('congres') || signal.includes('evento')) {
+        serviceField.value = "Catering corporativo integral + Coffee break + Mobiliario para eventos";
+        reasonField.value = "Evento corporativo formal con necesidad de pausas de café continuas y mobiliario adecuado.";
+      } else if (signal.includes('bienestar') || signal.includes('clima') || signal.includes('integrac')) {
+        serviceField.value = "Carritos de snacks gourmet + Coffee break interactivo + Activación de integración";
+        reasonField.value = "Campañas de clima laboral demandan dinámicas dinámicas y carritos de comida que incentiven la interacción.";
+      } else if (signal.includes('campaña') || signal.includes('lanzam') || signal.includes('btl')) {
+        serviceField.value = "Activación BTL + Carritos de snacks temáticos + Merchandising corporativo";
+        reasonField.value = "Lanzamientos de producto o marca requieren impacto visual, carritos atractivos y artículos publicitarios.";
+      } else if (signal.includes('sede') || signal.includes('oficina') || signal.includes('planta')) {
+        serviceField.value = "Coffee breaks recurrentes + Catering para inauguración / corte de cinta";
+        reasonField.value = "Apertura o múltiples sedes generan demanda recurrente de coffee breaks institucionales.";
+      }
+    }
+
+    function autoSuggestPriorityReason() {
+      const prio = document.getElementById('formPriority').value;
+      const reasonField = document.getElementById('formPriorityReason');
+      if (prio === 'ALTA') {
+        reasonField.value = "ALTA PRIORIDAD: Cuenta con señales recientes activas, múltiples sedes y necesidad comercial directa.";
+      } else if (prio === 'MEDIA') {
+        reasonField.value = "PRIORIDAD MEDIA: Señal comercial relevante en fecha definida para seguimiento próximo.";
+      } else {
+        reasonField.value = "BAJA PRIORIDAD: Prospecto potencial pero sin señal comercial urgente a corto plazo.";
+      }
+    }
+
+    function regenerateCustomFormMessage() {
+      const tempP = {
+        companyName: document.getElementById('formCompanyName').value || '[Empresa]',
+        contactName: document.getElementById('formContactName').value || '[Nombre]',
+        signal: document.getElementById('formSignalDesc').value || '',
+        recommendedService: document.getElementById('formRecommendedService').value || 'catering y activaciones corporativas'
+      };
+      document.getElementById('formCustomMessage').value = generateCommercialPitch(tempP);
+      showToast("Mensaje comercial sugerido generado.");
+    }
+
+    /**
+     * Generador inteligente de mensajes comerciales breves, profesionales y sin sonar a spam.
+     */
+    function generateCommercialPitch(p) {
+      const contactPart = (p.contactName && p.contactName !== 'No disponible') ? `Hola, ${p.contactName.split(' ')[0]}` : 'Estimado equipo comercial / gestión humana';
+      const company = p.companyName.replace(/\[DEMO\]/g, '').trim();
+      const service = p.recommendedService || 'soluciones de catering, merchandising y eventos corporativos';
+
+      let signalMention = `vi que en ${company} vienen impulsando importantes actividades corporativas`;
+      if (p.signal) {
+        const sigLower = p.signal.toLowerCase();
+        if (sigLower.includes('contrat') || sigLower.includes('onboarding')) {
+          signalMention = `vi que en ${company} vienen incorporando nuevos colaboradores en Lima`;
+        } else if (sigLower.includes('aniversario')) {
+          signalMention = `vi que en ${company} están próximos a celebrar un importante aniversario institucional`;
+        } else if (sigLower.includes('convenci') || sigLower.includes('congres')) {
+          signalMention = `vi que vienen coordinando su próxima convención corporativa en Lima`;
+        } else if (sigLower.includes('bienestar') || sigLower.includes('clima')) {
+          signalMention = `vi que en ${company} vienen promoviendo iniciativas de clima y bienestar para sus colaboradores`;
+        } else if (sigLower.includes('inaugura') || sigLower.includes('sede')) {
+          signalMention = `felicitaciones por la apertura de sus nuevas instalaciones en Lima`;
+        }
+      }
+
+      return `${contactPart}. Soy Jenny de LUMO Eventos. ${signalMention} y quería poner a tu disposición nuestras soluciones de ${service}. Si actualmente están planificando o evaluando proveedores para estas actividades, me gustaría compartirte nuestro portafolio de clientes y conocer qué podrían necesitar. ¿Tendrías unos minutos esta semana?`;
+    }
+
+    // ==========================================================================
+    // FUNCIÓN PREPARADA PARA INTEGRACIÓN CON FUENTES EXTERNAS O APIs
+    // ==========================================================================
+    /**
+     * ARQUITECTURA EXTENSIBLE PARA FUENTES EXTERNAS
+     * Esta función está formalmente preparada para conectarse con:
+     * - Backend de búsqueda inteligente (Node.js / Python FastAPI / Supabase)
+     * - Webhooks de portales de empleo de Lima (Computrabajo, Bumeran, LinkedIn Jobs)
+     * - APIs de enriquecimiento B2B (Apollo, Hunter, LinkedIn Sales Navigator)
+     */
+    async function fetchExternalProspects(searchCriteria) {
+      console.log("[LUMO PROSPECT API HOOK] Criterios de búsqueda preparados:", searchCriteria);
+
+      const apiEndpoint = localStorage.getItem(API_CONFIG_KEY);
+
+      if (!apiEndpoint) {
+        // En Modo Demo Transparente, se informa claramente y se filtran los prospectos existentes
+        return {
+          source: "MODO_DEMO",
+          message: "Modo demo: conecta una fuente de datos para realizar búsquedas reales.",
+          criteria: searchCriteria
+        };
+      }
+
+      // Si el usuario configuró una URL real de backend:
+      try {
+        const response = await fetch(apiEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(searchCriteria)
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error en el servidor externo (${response.status})`);
+        }
+
+        const data = await response.json();
+        return {
+          source: "EXTERNAL_API",
+          results: data.prospects || []
+        };
+      } catch (err) {
+        console.error("Error al conectar con la API externa:", err);
+        return {
+          source: "ERROR",
+          message: "No se pudo conectar con la API externa. Verificando en modo local.",
+          error: err.message
+        };
+      }
+    }
+
+    function handleProspectSearch(event) {
+      event.preventDefault();
+
+      const searchCriteria = {
+        companyType: document.getElementById('searchCompanyType').value,
+        sector: document.getElementById('searchSector').value,
+        location: document.getElementById('searchLocation').value,
+        targetArea: document.getElementById('searchTargetArea').value,
+        serviceInterest: document.getElementById('searchServiceInterest').value,
+        quantity: parseInt(document.getElementById('searchQuantity').value, 10),
+        selectedSignals: Array.from(document.querySelectorAll('input[name="signalType"]:checked')).map(cb => cb.value)
+      };
+
+      // Ejecutar gancho extensible
+      fetchExternalProspects(searchCriteria).then(result => {
+        if (result.source === "MODO_DEMO") {
+          showToast("Búsqueda realizada (Modo Demo: filtrando oportunidades en Lima)");
+        } else if (result.source === "EXTERNAL_API") {
+          showToast(`Se obtuvieron ${result.results.length} prospectos de la API externa.`);
+          // Aquí se fusionarían los prospectos devueltos
+        }
+      });
+
+      // Aplicar filtrado a los prospectos locales según los criterios del formulario
+      const sectorFilter = searchCriteria.sector;
+      const serviceInterest = searchCriteria.serviceInterest;
+
+      currentFilteredProspects = prospectsState.filter(p => {
+        let matchSector = true;
+        if (sectorFilter !== 'todos') {
+          matchSector = p.sector && p.sector.toLowerCase().includes(sectorFilter.toLowerCase());
+        }
+
+        let matchService = true;
+        if (serviceInterest !== 'cualquiera') {
+          matchService = p.recommendedService && p.recommendedService.toLowerCase().includes(serviceInterest.toLowerCase());
+        }
+
+        return matchSector && matchService;
+      });
+
+      renderProspectsList();
+      updateCountIndicator(`Búsqueda: ${searchCriteria.sector !== 'todos' ? searchCriteria.sector : 'Todos los sectores'}`);
+    }
+
+    function resetSearchForm() {
+      document.getElementById('prospectingSearchForm').reset();
+      document.getElementById('searchLocation').value = "Lima Metropolitana";
+      document.querySelectorAll('input[name="signalType"]').forEach(cb => cb.checked = true);
+      applyFilters();
+      showToast("Formulario de búsqueda restablecido.");
+    }
+
+    function toggleSearchForm() {
+      const body = document.getElementById('search-form-body');
+      const indicator = document.getElementById('search-collapse-indicator');
+      if (body.style.display === 'none') {
+        body.style.display = 'block';
+        indicator.textContent = 'Ocultar panel ▲';
+      } else {
+        body.style.display = 'none';
+        indicator.textContent = 'Mostrar panel ▼';
+      }
+    }
+
+    // ==========================================================================
+    // CONFIGURACIÓN DE API EXTERNA
+    // ==========================================================================
+    function openApiConfigModal() {
+      const current = localStorage.getItem(API_CONFIG_KEY) || '';
+      document.getElementById('apiEndpointInput').value = current;
+      document.getElementById('apiModalOverlay').classList.add('active');
+    }
+
+    function closeApiConfigModal() {
+      document.getElementById('apiModalOverlay').classList.remove('active');
+    }
+
+    function saveApiConfig() {
+      const val = document.getElementById('apiEndpointInput').value.trim();
+      if (val) {
+        localStorage.setItem(API_CONFIG_KEY, val);
+        showToast("Endpoint de API guardado correctamente.");
+      } else {
+        localStorage.removeItem(API_CONFIG_KEY);
+        showToast("Modo Demo local activo (sin API externa).");
+      }
+      closeApiConfigModal();
+    }
+
+    function exportDataAsJSON() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(prospectsState, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `lumo_prospects_${new Date().toISOString().split('T')[0]}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      showToast("Datos exportados en archivo JSON.");
+    }
+
+    // ==========================================================================
+    // SISTEMA DE NOTIFICACIONES (TOAST)
+    // ==========================================================================
+    function showToast(message, duration = 3000) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast-msg';
+      toast.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C59B27" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>${escapeHtml(message)}</span>
+      `;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.add('toast-fadeout');
+        setTimeout(() => {
+          toast.remove();
+        }, 300);
+      }, duration);
+    }
+
+    // ==========================================================================
+    // UTILIDADES GENERALES
+    // ==========================================================================
+    function handleModalOverlayClick(e, modalId) {
+      if (e.target.id === modalId) {
+        document.getElementById(modalId).classList.remove('active');
+      }
+    }
+
+    function formatDateTime(d) {
+      const pad = (n) => String(n).padStart(2, '0');
+      const year = d.getFullYear();
+      const month = pad(d.getMonth() + 1);
+      const day = pad(d.getDate());
+      const hours = pad(d.getHours());
+      const minutes = pad(d.getMinutes());
+      return `${year}-${month}-${day} ${hours}:${minutes}`;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+  </script>
+</body>
+</html>
